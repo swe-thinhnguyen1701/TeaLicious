@@ -57,10 +57,10 @@ type User {
     addUser(username: String!, email: String!, password: String!): User
     login(username: String, email: String, password: String!): User
     updateAddress(street: String, city: String, state: String, zip: String): User
-    addToCart(productId: ID!, quantity: Int): Cart
-    removeFromCart(productId: ID!): Cart
-    updateCartItem(productId: ID!, quantity: Int!): Cart
     newCart(userId: ID): Cart
+    addItemToCart(productId: ID!, quantity: Int): Cart
+    removeItemFromCart(productId: ID!): Cart
+    updateCartItem(productId: ID!, quantity: Int!): Cart
   }
 `
 module.exports = typeDefs;
