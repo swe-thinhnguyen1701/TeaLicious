@@ -1,0 +1,292 @@
+[
+    {
+        "name": "Assam Tea",
+        "image": "",
+        "category": "black",
+        "description": "Assam tea is mostly grown at or near sea level and is known for its body, briskness, malty flavour, and strong, bright colour. Assam teas, or blends containing Assam, are often sold as breakfast teas",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Darjeeling Tea",
+        "image": "",
+        "category": "black",
+        "description": "Darjeeling tea is a black tea that is grown and processed in the Darjeeling or Kalimpong Districts in West Bengal, also among the only teas in the world with a Geographical Indication trademark",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Lapsang Souchong",
+        "image": "",
+        "category": "black",
+        "description": "Lapsang Souchong is a tea that is smoke-dried over a pinewood fire",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Keemun",
+        "image": "",
+        "category": "black",
+        "description": "A black tea",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Dianhong Tea",
+        "image": "",
+        "category": "black",
+        "description": "A relatively high-end, gourmet Chinese black tea sometimes used in various tea blends. The main difference between Dianhong and other Chinese black teas is the amount of fine leaf buds, or golden tips present in the dried tea.",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Earl Grey",
+        "image": "",
+        "category": "black",
+        "description": "A tea blend which has been flavoured with oil of bergamot",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Sencha Tea",
+        "image": "",
+        "category": "green",
+        "description": "A Japanese green tea prepared by infusing whole tea leaves in hot water.",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Matcha Tea",
+        "image": "",
+        "category": "green",
+        "description": "A finely ground powder of specially grown and processed green tea leaves, traditionally consumed in East Asia.",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Bancha",
+        "image": "",
+        "category": "green",
+        "description": "Tea that is harvested from the same tea tree as sencha grade, but it is plucked later than sencha is. Can be found in a number of forms such as roasted, unroasted, smoked, etc.",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Gyokuro",
+        "image": "",
+        "category": "green",
+        "description": "A type of shaded green tea from Japan. It differs from the standard sencha (a classic unshaded green tea) in being grown under the shade rather than the full sun.",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Kukicha",
+        "image": "",
+        "category": "green",
+        "description": "A Japanese blend made of stems, stalks, and twigs. It is available as a green tea or in more oxidised processing",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Konacha",
+        "image": "",
+        "category": "green",
+        "description": "A type of green tea, composed of the dust, tea buds and small leaves that are left behind after processing Gyokuro or Sencha",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Genmaicha",
+        "image": "",
+        "category": "green",
+        "description": "A Japanese brown rice green tea consisting of green tea mixed with roasted popped brown rice.",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Hojicha",
+        "image": "",
+        "category": "green",
+        "description": "A Japanese green tea that is roasted in a porcelain pot over charcoal",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Da Hong Pao",
+        "image": "",
+        "category": "oolong",
+        "description": "A Wuyi rock tea grown in the Wuyi Mountains of Fujian Province, China",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Shui Jin Gui",
+        "image": "",
+        "category": "oolong",
+        "description": "A Wuyi oolong tea from Mount Wuyi, Fujian, China",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Tieluohan",
+        "image": "",
+        "category": "oolong",
+        "description": "Grown on the cliffs of the Wuyi Mountains in China, Tieluohan is a light tea with high regards due to legends",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Bai Jiguan",
+        "image": "",
+        "category": "oolong",
+        "description": "A light Wuyi Mountain tea",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Shui Xian",
+        "image": "",
+        "category": "oolong",
+        "description": "Heavy Wuyi tea, the darkest of the dark oolongs from Wuyi.",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Tieguanyin",
+        "image": "",
+        "category": "oolong",
+        "description": "A variety of oolong tea that was originated during the 19th century",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Huangjin Gui",
+        "image": "",
+        "category": "oolong",
+        "description": "A premium variety of Chinese oolong tea named after the yellow golden color of its budding leaves and its unique flowery aroma",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Dong Ding",
+        "image": "",
+        "category": "oolong",
+        "description": "An oolong tea from Taiwan which translates to Frozen Summit or Icy Peak, and is the name of the mountain in Taiwan where the tea is cultivated",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Dongfang Meiren",
+        "image": "",
+        "category": "oolong",
+        "description": "A heavily oxidized, non-roasted, tip-type oolong tea originating in Hsinchu County, Taiwan",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Baozhong",
+        "image": "",
+        "category": "oolong",
+        "description": "A lightly oxidized tea, twist shape, with floral notes, and usually not roasted",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Ruan Zhi Oolong",
+        "image": "",
+        "category": "oolong",
+        "type": "oolong",
+        "description": "Ruan Zhi, or soft stem, is a variety of oolong tea developed by the Taiwan Tea Experiment Station ",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Jin Xuan",
+        "image": "",
+        "category": "oolong",
+        "description": "A variety of oolong tea developed in 1980",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Assam Smoked Oolong",
+        "image": "",
+        "category": "oolong",
+        "description": "Assam Smoked Oolong is a highly unusual and rare oak smoked tea from Mothola Tea Estate in Assam. ",
+        "price": 10.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Baihoi Yinzhen",
+        "image": "",
+        "category": "white",
+        "description": "A white tea made from only the top buds of the Camellia sinensis plant.",
+        "price": 15.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Baimudan tea",
+        "image": "",
+        "category": "white",
+        "description": "A type of white tea made from plucks each with one leaf shoot and two immediate young leaves (one bud two leaf ratio) of the Camellia sinensis plant.",
+        "price": 15.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Shoumei tea",
+        "image": "",
+        "category": "white",
+        "description": "A type of white tea produced from naturally withered upper leafs and tips",
+        "price": 15.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Xue Ya",
+        "image": "",
+        "category": "white",
+        "description": "A complex white tea from Fuding in Fujian Province",
+        "price": 15.00,
+        "stock": 100,
+        "weight": 2
+    },
+    {
+        "name": "Satemwa Antlers",
+        "image": "",
+        "category": "white",
+        "description": "A white tea made from a blend of select Superior Cultivars from Malawi, making it rich in theanine and antioxidants.",
+        "price": 15.00,
+        "stock": 100,
+        "weight": 2
+    }
+]
+    

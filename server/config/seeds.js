@@ -9,7 +9,8 @@ const TEA_DATA = require('./teadata.json');
 const CATEGORY = [
     { name: "black" },
     { name: "green" },
-    { name: "oolong" }
+    { name: "oolong" },
+    {  name: "white"}
 ];
 
 if (!TEA_DATA) {
