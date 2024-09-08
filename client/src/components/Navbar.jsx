@@ -1,22 +1,15 @@
-function Navbar({setCurrentPage}) {
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+
+function Navbar() {
     return (
-        <nav>
-            <ul>
-                <li className="nav-link" onClick={() => {
-                    setCurrentPage("BLACK TEA")
-                }}><a href="#">BLACK TEA</a></li>
-                <li className="nav-link" onClick={() => {
-                    setCurrentPage("GREEN TEA")
-                }}><a href="#">GREEN TEA</a></li>
-                <li className="nav-link" onClick={() => {
-                    setCurrentPage("OOLONG TEA")
-                }}><a href="#">OOLONG TEA</a></li>
-                <li className="nav-link" onClick={() => {
-                    setCurrentPage("WHITE TEA")
-                }}><a href="#">WHITE TEA</a></li>
-            </ul>
+        <nav className="navbar">
+            <Link to="/black tea">BLACK TEA</Link>
+            <Link to="/green tea">GREEN TEA</Link>
+            <Link to="/oolong">OOLONG</Link>
+            <Link to="/white tea">WHITE TEA</Link>
         </nav>
-    )
+    );
 }
 
 export default Navbar;
