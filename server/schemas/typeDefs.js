@@ -47,20 +47,24 @@ type User {
   type Query {
     me: User
     getCart(_id: ID!): Cart
-    getProducts(category: String, categoryId: ID): [Product]
+    getProducts(categoryId: ID!): [Product]
     getProduct(_id: ID!): Product
     getCategories: [Category]
-    getCategory(_id: ID!): Category
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): User
-    login(username: String, email: String, password: String!): User
+    addUser(username: String!, email: String!, password: String!): Auth
+    login(username: String, email: String, password: String!): Auth
     updateAddress(street: String, city: String, state: String, zip: String): User
     newCart(userId: ID): Cart
     addItemToCart(productId: ID!, quantity: Int): Cart
     removeItemFromCart(productId: ID!): Cart
     updateCartItem(productId: ID!, quantity: Int!): Cart
+  }
+
+  type Auth {
+    token: ID!
+    user: User
   }
 `
 module.exports = typeDefs;
