@@ -6,6 +6,19 @@ const resolvers = {
         me: async (_parent, _agrs, context) => {
             if (context.user) return User.findOne({ _id: context.user._id }).populate("cart");
             throw AuthenticationError;
+        },
+        getCart: async (_parent, {_id}) => {
+            if (context.cart) return Cart.findById({ _id: _id }).populate("items.productId");
+            throw AuthenticationError;
+        },
+        getProducts: async (_parent, {categoryId}) => {
+            return Product.find({category: categoryId});
+        },
+        getProduct: async (_parent, {_id}) => {
+            return Product.findById({_id});
+        },
+        getCategories: async () => {
+            return Category.find();
         }
     },
 
@@ -96,3 +109,5 @@ const resolvers = {
         }
     }
 }
+
+module.exports = resolvers;
