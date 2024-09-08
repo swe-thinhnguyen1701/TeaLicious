@@ -1,3 +1,4 @@
+//weight unit is ounce (oz) and we will start with 4oz is 12 dollars 
 const db = require("./db-connection");
 const s3Client = require("./aws-connection");
 const { GetObjectCommand } = require("@aws-sdk/client-s3");
