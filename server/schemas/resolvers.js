@@ -4,7 +4,7 @@ const { signToken, AuthenticationError } = require("../utils/auth");
 const resolvers = {
     Query: {
         me: async (_parent, _agrs, context) => {
-            if (context.user) return User.findOne({ _id: context.user._id }).populate("cart");
+            if (context.user) return User.findOne({ _id: context.user._id }).populate("cart").populate("items.productId");
             throw AuthenticationError;
         },
         getCart: async (_parent, {_id}) => {
@@ -12,10 +12,10 @@ const resolvers = {
             throw AuthenticationError;
         },
         getProducts: async (_parent, {categoryId}) => {
-            return Product.find({category: categoryId});
+            return Product.find({category: categoryId}).populate('category');
         },
         getProduct: async (_parent, {_id}) => {
-            return Product.findById({_id});
+            return Product.findById({_id}).populate("category");
         },
         getCategories: async () => {
             return Category.find();

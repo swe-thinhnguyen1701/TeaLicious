@@ -24,7 +24,7 @@ type User {
   }
 
   type CartItem {
-    productId: ID!
+    productId: Product
     quantity: Int
   }
 
