@@ -24,6 +24,13 @@ nav {
   margin-right: 30px;
   font-size: 1.1rem;
   color: rgb(58, 172, 58)
+/* NAVIGATION BAR */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
 }
 
 .logo {
@@ -237,6 +244,30 @@ footer {
 }
 
 /* CSS for link */
+
+/* CARD */
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card-img{
+    width: 40px;
+    height: 55px;
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.quantity-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 .link {
   margin: 15px;
 }
