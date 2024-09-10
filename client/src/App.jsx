@@ -7,6 +7,7 @@ import ProductsPage from './pages/ProductsPage/ProductsPage'; //Marissa will cre
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Card from './components/Card';
 import LoginPage from './pages/LoginPage/LoginPage'; // I will create LoginPage.jsx
 import UserPage from './pages/UserPage/UserPage'; // I will create UserPage.jsx
 import './index.css';
@@ -21,6 +22,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Header />
+        <Card />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
