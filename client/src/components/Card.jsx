@@ -51,7 +51,6 @@ function Card() {
           <input type="number" id="quantity" value={1} onChange={quantityChangeHandler} min={0}/>
           <button onClick={addQuantityHandler}>+</button>
         </div>
-        <button>Add to Cart</button>
       </div>
 >>>>>>> 4c764ed (update Card)
     </div>
