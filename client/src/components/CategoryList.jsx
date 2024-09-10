@@ -1,11 +1,15 @@
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
-import {GET_CATEGORIES} from "../utils/queries";
+import { GET_CATEGORIES } from "../utils/queries";
 
-function CategoryList () {
-    const {loading, data} = useQuery(GET_CATEGORIES);
+function CategoryList() {
+    const { loading, data } = useQuery(GET_CATEGORIES);
 
-    if(loading) return <h2>Loading</h2>;
+    if (loading) return <h2>Loading</h2>;
+    if (!data || !data.getCategories) {
+        console.erro("Fail to fetch categories");
+        return <h2>Internal error</h2>
+    }
 
     return (
         <div className="category-container">
