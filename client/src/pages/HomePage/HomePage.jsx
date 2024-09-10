@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import { Link } from "reactrouer-dom";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 
 function HomePage() {
