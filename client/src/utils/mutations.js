@@ -47,28 +47,21 @@ export const UPDATE_ADDRESS = gql`
 
 
 export const NEW_CART = gql`
-  mutation newCart{
-    newCart {
-      cart {
-        _id
-        items {
-          productId {
-            _id
-            name
-            description
-            price
-          }
-          quantity
-        }
-      }
-      user {
-        _id
-        username
-        email
-        cart {
+  mutation newCart($userId: ID) {
+    newCart(userId: $userId) {
+      _id
+      userId
+      items {
+        productId {
           _id
+          name
+          price
+          weight
+          image
         }
+        quantity
       }
+      total
     }
   }
 `;
