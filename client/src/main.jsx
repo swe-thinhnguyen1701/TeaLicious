@@ -6,6 +6,7 @@ import './index.css'
 
 import Home from "./pages/HomePage/HomePage.jsx";
 import Error from "./pages/ErrorPage/Error.jsx";
+import UserPage from "./pages/UserPage/UserPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        path: "/user",
+        element: <UserPage />
       }
     ]
   }
