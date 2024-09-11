@@ -19,24 +19,6 @@ function Card(product) {
       setQuantity(quantity - 1);
   }
 
-<<<<<<< HEAD
-function Card() {
-  function addtoCart () {
-    console.log()
-
-  }
-  return (
-    <div className="card-container">
-      <img 
-      className="card-img"
-      src="" 
-      alt="">
-      </img>
-      <h2 className="card-title">Product Name</h2>
-      <p className="card-description">Product Description</p>
-      <p className="card-price">Price</p>
-      <button className="add-cart" onClick={addToCart}>Add to Cart</button>
-=======
   return (
     <div className="card">
       <div className="card-img">
@@ -51,14 +33,12 @@ function Card() {
           <input type="number" id="quantity" value={1} onChange={quantityChangeHandler} min={0}/>
           <button onClick={addQuantityHandler}>+</button>
         </div>
+        <button>Add to Cart</button>
       </div>
->>>>>>> 4c764ed (update Card)
     </div>
   );
 
 }
 
+
 export default Card;
-
-
-
