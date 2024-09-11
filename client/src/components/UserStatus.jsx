@@ -5,7 +5,7 @@ import Auth from "../utils/auth";
 function UserStatus({ isLoggedIn }) {
     if (isLoggedIn) {
         return (
-            <ul className="list">
+            <ul className="list list-inline">
                 <li className="list-item">
                     <Link to="/my-profile">My Profile</Link>
                 </li>
@@ -17,7 +17,7 @@ function UserStatus({ isLoggedIn }) {
     }
 
     return (
-        <Link to="/auth">Login/Sign up</Link>
+        <Link to="/auth" className="link auth-link">Login / Sign up</Link>
     )
 }
 

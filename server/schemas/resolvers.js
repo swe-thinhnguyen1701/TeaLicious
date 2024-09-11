@@ -18,7 +18,8 @@ const resolvers = {
             return Product.findById({_id}).populate("category");
         },
         getCategories: async () => {
-            return Category.find();
+            const categories = await Category.find();
+            return categories;
         }
     },
 

@@ -9,16 +9,18 @@ import Auth from "../utils/auth";
 
 function Navbar() {
     return (
-        <nav>
-            <div className="nav-left">
-                <Link to="/">
-                    <img src={sampleLogo} className="logo" alt="TeaLicious logo" />
-                </Link>
-            </div>
-            <div className="nav-right">
-                <UserStatus isLoggedIn={Auth.loggedIn()}/>
-            </div>
-        </nav>
+        <header className="mb-20">
+            <nav>
+                <div className="nav-left">
+                    <Link to="/">
+                        <img src={sampleLogo} className="logo" alt="TeaLicious logo" />
+                    </Link>
+                </div>
+                <div className="nav-right">
+                    <UserStatus isLoggedIn={Auth.loggedIn()}/>
+                </div>
+            </nav>
+        </header>
     );
 }
 

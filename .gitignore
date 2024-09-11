@@ -1,5 +1,6 @@
 node_modules/
 .env
+package-lock.json
 mutations copy.js
 queries copy.js
 resolvers copy.js
