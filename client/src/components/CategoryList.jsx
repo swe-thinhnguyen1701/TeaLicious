@@ -40,7 +40,7 @@ function CategoryList() {
     }
 
     return (
-        <div className="category-container mb-20">
+        <div className="category-container">
             {categoryData.getCategories.map(category => {
                 return (
                     <div className={`${category._id === selectedCategory ? "category category-selected" : "category"}`} key={category._id}>
