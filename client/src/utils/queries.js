@@ -47,6 +47,7 @@ export const GET_PRODUCTS = gql`
       name
       description
       price
+      image
       category {
         _id
         name

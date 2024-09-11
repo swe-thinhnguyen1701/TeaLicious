@@ -41,6 +41,7 @@ type User {
   
   type Category {
     _id: ID!
+    name: String!
   }
   
   type Query {
