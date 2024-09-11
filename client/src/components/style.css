@@ -3,7 +3,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 15px;
+    
 }
 
 .logo{
@@ -11,3 +11,25 @@ nav{
     height: 50px;
     border-radius: 50%;
 }
+.link {
+ margin: 15px;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+    margin-top: auto;
+    background-color:  var(--green);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  
+  }
+  
+  .signature {
+    color: var(--black);
+    font-size: 1rem;
+    font-family: var(--cambria); /* UPDATE LATER */
+    font-weight: bold;
+  }

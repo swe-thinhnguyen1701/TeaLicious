@@ -1,17 +1,7 @@
-/* Import fonts */
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
-
-@keyframes scale {
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes fade-in {
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 :root {
@@ -34,6 +24,7 @@
   min-height: 100%;
   
   padding: 0;
+  margin: 0;
 }
 
 html {
@@ -49,8 +40,9 @@ html {
 
 /* CSS for body */
 body {
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   padding: 0;
+  margin: 0;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -91,25 +83,9 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* CSS for footer */
-footer {
-  display: flex;
-  justify-content: flex-start;
-  padding: 2rem 0;
-  margin-top: auto;
-  background-color: linear-gradient(to bottom, var(--green) 0%, var(--green) 50%, var(--black) 100%);
-  position: fixed;
-  bottom: 0;
-}
 
-.signature {
-  color: var(--black);
-  font-size: 1rem;
-  font-family: var(--cambria); /* UPDATE LATER */
-  font-weight: bold;
-}
 
-/* Media queries */ /* UPDATE LATER */
+/* Media queries */ /* UPDATE LATER 
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--green);
@@ -123,4 +99,4 @@ footer {
   button {
     background-color: var(--black);
   }
-}
+}*/
