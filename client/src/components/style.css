@@ -11,6 +11,8 @@ nav {
 
 .nav-right {
   margin-right: 30px;
+  font-size: 1.1rem;
+  color: rgb(58, 172, 58)
 }
 
 .logo {

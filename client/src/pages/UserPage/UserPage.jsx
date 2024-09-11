@@ -38,7 +38,7 @@ const UserPage = () => {
     };
     return (
         <div className="user-page">
-            <h1>Profile</h1>
+            <h1 className="profile">Profile</h1>
             <div className="form-container">
                 <div className="input-field">
                     <label>Username:</label>
@@ -61,28 +61,28 @@ const UserPage = () => {
                 </div>
                 <div className="input-field">
                     <label>Address:</label>
-                    <input type="text"
+                    <input className="address-input" type="text"
                         name="street"
                         placeholder="Street"
                         value={userInfo.address.street}
                         onChange={handleChange} />
-                    <input type="text"
+                    <input className="address-input" type="text"
                         name="city"
                         placeholder="City"
                         value={userInfo.address.city}
                         onChange={handleChange} />
-                    <input type="text"
+                    <input className="address-input" type="text"
                         name="state"
                         placeholder="State"
                         value={userInfo.address.state}
                         onChange={handleChange} />
-                    <input type="text"
+                    <input className="address-input" type="text"
                         name="zip code"
                         placeholder="Zip code"
                         value={userInfo.address.zip}
                         onChange={handleChange} />
                 </div>
-                <button className="update-button" onClick={handleUpdate}>Update</button>
+                <button className="update-button" onClick={handleUpdate}>UPDATE</button>
             </div>
         </div>
     );
