@@ -9,6 +9,7 @@ import Error from "./pages/ErrorPage/Error.jsx";
 import UserPage from "./pages/UserPage/UserPage.jsx";
 import Review from "./pages/ReviewPage/Review.jsx"
 import ProductsPage from "./pages/ProductsPage/ProductsPage.jsx";
+import AuthForm from "./pages/AuthPage/AuthForm.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,13 +28,15 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Review />
-      }
       },
-
       {
         path: "/products",
         element: <ProductsPage />
       },
+      {
+        path: "/auth",
+        element: <AuthForm />
+      }
     ]
   }
 ])
