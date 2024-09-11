@@ -9,6 +9,19 @@ nav {
     padding: 10px 15px;
     width: 100%;
     margin-top: 10px;
+/* CSS for Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(to top, var(--green) 0%, var(--black) 5%, var(--green) 100%) var(--green);
+  padding: 0.5rem 0;
+  margin-right: 30px;
+}
+
+.nav-right {
+  margin-right: 30px;
 }
 
 .logo {
@@ -213,4 +226,37 @@ footer {
     .btn{
         color: white;
     }
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+
+/* CSS for link */
+.link {
+  margin: 15px;
+}
+
+/* CSS for footer */
+footer {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5rem 0;
+  margin-top: auto;
+  /*background: linear-gradient(to bottom, var(--black) 0%, var(--black) 7%, var(--green) 100%) var(--green);*/
+  /*background: linear-gradient(to bottom,  var(--green) 0%, var(--green) 25%, var(--black) 100%) var(--green);*/
+  background: linear-gradient(to bottom, var(--green) 0%, var(--black) 5%, var(--green) 100%) var(--green);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.signature {
+  color: var(--black);
+  font-size: 1rem;
+  font-family: var(--cambria);
+  /* UPDATE LATER */
+  font-weight: bold;
 }

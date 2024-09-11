@@ -8,6 +8,8 @@
   /* CSS variables */
   --green: rgb(5, 165, 5); /* UPDATE LATER IF NEEDED */
   --black: rgba(0, 0, 0, 0.664); 
+  --green: rgb(34, 156, 34); /* UPDATE LATER IF NEEDED */
+  --black: rgba(0, 0, 0, 0.925);
   --white: white;
   --cambria: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* UPDATE LATER */
   --italic: italic; /* UPDATE LATER */
@@ -40,7 +42,11 @@ body {
   /* background-color: var(--black); */
   /* color: black; */
   font-size: 1.2rem;
+  /*max-width: 1400px;*/
+  background-color: var(--black);
 }
+
+
 
 /* CSS for ancers */
 a {

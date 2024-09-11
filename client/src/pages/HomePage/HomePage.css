@@ -14,11 +14,28 @@
   }
 }
 
-/* import font for h1 */
+/* CSS for title */
+.title {
+  text-align: center;
+  /* import font for title */
+}
 
+/* CSS for statement */
 .statement {
-    width: 40%;
-    /*add padding*/
+  width: 100%;
+  text-align: end;
+  padding-right: 10%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+/* CSS for button */
+.button {
+  width: 15%;
+  background-color: var(--green);
+  float: left;
+  margin-left: 70%;
+  
 }
 .home-page{
     min-height: 78vh;
