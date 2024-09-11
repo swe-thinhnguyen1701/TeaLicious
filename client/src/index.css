@@ -87,10 +87,10 @@ button:focus-visible {
 
 /* Media queries */ /* UPDATE LATER 
 @media (prefers-color-scheme: light) {
-  :root {
+  /* :root {
     color: var(--green);
     background-color: var(--black);
-  }
+  } */
 
   a:hover {
     color: var(--white);
