@@ -25,14 +25,16 @@ nav {
   font-size: 1.1rem;
   color: rgb(58, 172, 58)
 /* NAVIGATION BAR */
-nav{
+nav {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px 15px;
     margin-top: 10px;
-    
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 10px 15px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .logo {
@@ -243,38 +245,73 @@ footer {
   height: 50px;
   border-radius: 50%;
   margin-left: 30px;
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.5s;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+.auth-link{
+    font-size: 1.3rem;
+}
+
+@media screen and (min-width: 768px){
+    .logo{
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .auth-link{
+        font-size: 1.7rem;
+    }
 }
 
 /* CSS for link */
 
 /* CARD */
-.card{
+.card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 10px;
 }
 
-.card-img{
-    width: 40px;
-    height: 55px;
+.card-img {
+    width: 120px;
+    height: 140px;
 }
 
-.card-info{
+.card-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.card-info {
     display: flex;
     flex-direction: column;
 }
 
-.quantity-container{
+.quantity-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
+
 .link {
   margin: 15px;
+    margin: 15px;
 }
 
 /* CSS for footer */
+/* FOOTER */
 footer {
   display: flex;
   justify-content: flex-start;
@@ -294,4 +331,68 @@ footer {
   font-family: var(--cambria);
   /* UPDATE LATER */
   font-weight: bold;
+}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: #2a5d5a;
+}
+
+.signature {
+    color: white;
+    font-size: 1rem;
+    font-family: var(--cambria);
+    /* UPDATE LATER */
+    font-weight: bold;
+}
+
+@media screen and (min-width: 1400px){
+    .signature{
+        font-size: 1.3rem;
+    }
+}
+
+/* CATEGORY LIST */
+.category-container{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+}
+
+.category{
+    padding: 5px 10px;
+    border-radius: 10px;
+    /* border: 1px solid #2a5d5a; */
+    transition: all 0.3s ease-in;
+}
+
+.category:hover{
+    background-color: #a07321;
+    cursor: pointer;
+}
+
+.category:hover .btn{
+    color: white;
+}
+
+@media screen and (min-width: 768px){
+    .category .btn{
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and(min-width: 1400px) {
+    .category .btn{
+        font-size: 1.8rem;
+    }
+}
+
+.category.category-selected{
+    background-color: #a07321;
+    .btn{
+        color: white;
+    }
 }
