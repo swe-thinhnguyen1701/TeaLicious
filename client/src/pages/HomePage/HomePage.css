@@ -1,0 +1,22 @@
+/* Import fonts */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* import font for h1 */
+
+.statement {
+    width: 40%;
+    /*add padding*/
+}
