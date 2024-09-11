@@ -11,14 +11,14 @@ function ProductsPage() {
             </img>
             <h2 className="card-title">Product Name</h2>
             <p className="card-description">Product Description</p>
-            <p className="card-description">Stock</p>
-            <p className="card-description">weight</p>
-            <p className="card-description">Price</p>
-            <button className="Add-Cart" onClick={AddtoCart}>Add to Cart</button>
+            <p className="card-stock">Stock</p>
+            <p className="card-weight">weight</p>
+            <p className="card-price">Price</p>
+            <button className="add-cart" onClick={addToCart}>Add to Cart</button>
         </div>
     );
 
 }
 
 
-export default ProductsPage;
+export default ProductsPage;git

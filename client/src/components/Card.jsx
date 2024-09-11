@@ -15,8 +15,8 @@ function Card() {
       </img>
       <h2 className="card-title">Product Name</h2>
       <p className="card-description">Product Description</p>
-      <p className="card-description">Price</p>
-      <button className="Add-Cart" onClick={addtoCart}>Add to Cart</button>
+      <p className="card-price">Price</p>
+      <button className="add-cart" onClick={addToCart}>Add to Cart</button>
     </div>
   );
 
