@@ -142,3 +142,22 @@ button:focus-visible {
 .link:visited{
   color: black;
 }
+}
+
+
+
+/* Media queries */ /* UPDATE LATER 
+@media (prefers-color-scheme: light) {
+  /* :root {
+    color: var(--green);
+    background-color: var(--black);
+  } */
+
+  a:hover {
+    color: var(--white);
+  }
+
+  button {
+    background-color: var(--black);
+  }
+}*/

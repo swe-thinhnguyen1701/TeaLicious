@@ -175,3 +175,10 @@ span:nth-child(8) {
 .button:hover {
   color: var(--white);
 }
+.home-page{
+    min-height: 79vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
