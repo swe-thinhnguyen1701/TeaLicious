@@ -108,6 +108,7 @@ span:nth-child(8) {
   margin-left: 75%;
   
 }
+
 .home-page{
     min-height: 78vh;
     display: flex;
@@ -238,4 +239,7 @@ span:nth-child(8) {
   .get-started-link{
     font-size: 1.8rem;
   }
+
+.button:hover {
+  color: var(--white);
 }
