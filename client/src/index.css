@@ -6,8 +6,8 @@
 
 :root {
   /* CSS variables */
-  --green: rgb(5, 165, 5); /* UPDATE LATER IF NEEDED */
-  --black: rgba(0, 0, 0, 0.664);
+  --green: rgb(34, 156, 34); /* UPDATE LATER IF NEEDED */
+  --black: rgba(0, 0, 0, 0.925);
   --white: white;
   --cambria: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* UPDATE LATER */
   --italic: italic; /* UPDATE LATER */
@@ -46,9 +46,11 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  max-width: 1400px;
+  /*max-width: 1400px;*/
   background-color: var(--black);
 }
+
+
 
 /* CSS for ancers */
 a {
