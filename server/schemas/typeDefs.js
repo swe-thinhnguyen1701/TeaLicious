@@ -56,8 +56,9 @@ type User {
     addUser(username: String!, email: String!, password: String!): Auth
     login(username: String, email: String, password: String!): Auth
     updateAddress(street: String, city: String, state: String, zip: String): User
-    newCart(userId: ID): Cart
-    addItemToCart(productId: ID!, quantity: Int): Cart
+    syncCart(cartId: ID!): User
+    newCart: Cart
+    addItemToCart(_id: ID!, productId: ID!, quantity: Int): Cart
     removeItemFromCart(productId: ID!): Cart
     updateCartItem(productId: ID!, quantity: Int!): Cart
   }

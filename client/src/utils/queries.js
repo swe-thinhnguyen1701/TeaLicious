@@ -58,7 +58,7 @@ export const GET_PRODUCTS = gql`
 
 
 export const GET_PRODUCT = gql`
-  query getProducts($_id: ID!) {
+  query getProduct($_id: ID!) {
     getProduct(_id: $_id) {
       _id
       name

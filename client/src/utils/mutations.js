@@ -47,8 +47,8 @@ export const UPDATE_ADDRESS = gql`
 
 
 export const NEW_CART = gql`
-  mutation newCart($userId: ID) {
-    newCart(userId: $userId) {
+  mutation newCart {
+    newCart {
       _id
       userId
       items {
@@ -68,8 +68,8 @@ export const NEW_CART = gql`
 
 
 export const ADD_ITEM_TO_CART = gql`
-  mutation addItemToCart ($productId: ID!, $quantity: Int!) {
-    addItemToCart(productId: $productId, quantity: $quantity) {
+  mutation addItemToCart ($_id: ID!, $productId: ID!, $quantity: Int!) {
+    addItemToCart(_id: $_id, productId: $productId, quantity: $quantity) {
       _id
       items {
         productId {
@@ -120,6 +120,10 @@ export const UPDATE_CART_ITEM = gql`
   }
 `;
 
-
-
-
+export const SYNC_CART = gql`
+  mutation syncCart($cartId: ID!){
+    syncCart(cartId: $cartId) {
+      _id
+    }
+  }
+`

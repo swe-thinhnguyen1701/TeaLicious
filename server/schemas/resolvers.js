@@ -7,15 +7,15 @@ const resolvers = {
             if (context.user) return User.findOne({ _id: context.user._id }).populate("cart").populate("items.productId");
             throw AuthenticationError;
         },
-        getCart: async (_parent, {_id}) => {
+        getCart: async (_parent, { _id }) => {
             if (context.cart) return Cart.findById({ _id: _id }).populate("items.productId");
             throw AuthenticationError;
         },
-        getProducts: async (_parent, {categoryId}) => {
-            return Product.find({category: categoryId}).populate('category');
+        getProducts: async (_parent, { categoryId }) => {
+            return Product.find({ category: categoryId }).populate('category');
         },
-        getProduct: async (_parent, {_id}) => {
-            return Product.findById({_id}).populate("category");
+        getProduct: async (_parent, { _id }) => {
+            return Product.findById({ _id }).populate("category");
         },
         getCategories: async () => {
             const categories = await Category.find();
@@ -52,30 +52,28 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
-        newCart: async (_parent, _args, context) => {
+        newCart: async (_parent, _args) => {
             try {
                 const cart = await Cart.create({});
-                let user = null;
-                if (context.user) {
-                    user = await User.findByIdAndUpdate(
-                        context.user._id,
-                        { cart: cart._id },
-                        { new: true })
-                        .populate("cart");
-                }
-                return { cart, user };
+                return cart;
             } catch (error) {
                 console.error("ERROR occurs while creating CART");
-                throw new Error("Failed to create new card");
+                throw new Error("Failed to create new cart");
             }
         },
-        addItemToCart: async (_parent, { productId, quantity }, context) => {
+        addItemToCart: async (_parent, { _id, productId, quantity }) => {
             try {
                 const cart = await Cart.findByIdAndUpdate(
-                    context.cart,
+                    _id,
                     { $push: { items: { productId, quantity } } },
                     { new: true }
                 );
+
+                if (!cart) {
+                    console.error("Cannot find cart id");
+                    throw new Error("Cart not found");
+                }
+
                 return cart;
             } catch (error) {
                 console.error("ERROR occurs while adding ITEM to CART");
@@ -106,6 +104,22 @@ const resolvers = {
             } catch (error) {
                 console.error("ERROR occurs while updating ITEM in CART");
                 throw new Error("Failed to update item in cart");
+            }
+        },
+        syncCart: async (_parent, { cartId }, context) => {
+            if (!context.user) return;
+            try {
+                const user = await User.findById(context.user._id);
+
+                if(!user.cart){
+                    await user.updateOne({cart: cartId},{new: true});
+                }
+                // console.log(user);
+                const updateUser = await User.findById(context.user._id);
+                return updateUser;
+            } catch (error) {
+                console.error("ERROR occurs while syncing CART");
+                throw new Error("Failed to sync cart");
             }
         }
     }
