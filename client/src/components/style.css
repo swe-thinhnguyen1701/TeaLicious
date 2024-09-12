@@ -1,28 +1,4 @@
 /* NAVIGATION BAR */
-nav {
-    background: linear-gradient(to top, var(--green) 0%, var(--black) 5%, var(--green) 100%) var(--green);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin: 0 auto;
-    max-width: 1400px;
-    padding: 10px 15px;
-    width: 100%;
-    margin-top: 10px;
-}
-
-/* CSS for Navbar */
-/* nav { */
-/* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    
-    padding: 0.5rem 0;
-    margin-right: 30px;
-} */
-
 .nav-right {
     /* Charles */
     margin-right: 30px;
@@ -187,6 +163,7 @@ footer {
     justify-content: center;
     align-items: center;
     height: 50px;
+    width: 100%;
     background: #2a5d5a;
 }
 
@@ -391,18 +368,6 @@ footer {
     }
 }
 
-/* .link {
-.link {
-  margin: 15px;
-    margin: 15px;
-} */
-
-
-
-/* CSS for footer */
-/* FOOTER */
-footer {}
-
 .nav-right {
     margin-right: 30px;
     font-size: 1.1rem;
@@ -419,51 +384,6 @@ footer {}
 /* CSS for link */
 .link {
     margin: 15px;
-}
-
-/* CSS for footer */
-footer {
-
-    display: flex;
-    justify-content: flex-start;
-    padding: 0.5rem 0;
-    margin-top: auto;
-    /*background: linear-gradient(to bottom, var(--black) 0%, var(--black) 7%, var(--green) 100%) var(--green);*/
-    /*background: linear-gradient(to bottom,  var(--green) 0%, var(--green) 25%, var(--black) 100%) var(--green);*/
-    background: linear-gradient(to bottom, var(--green) 0%, var(--black) 5%, var(--green) 100%) var(--green);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.signature {
-    color: var(--black);
-    font-size: 1rem;
-    font-family: var(--cambria);
-    /* UPDATE LATER */
-    font-weight: bold;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    background: #2a5d5a;
-}
-
-.signature {
-    color: white;
-    font-size: 1rem;
-    font-family: var(--cambria);
-    /* UPDATE LATER */
-    font-weight: bold;
-}
-
-@media screen and (min-width: 1400px) {
-    .signature {
-        font-size: 1.3rem;
-    }
 }
 
 /* CATEGORY LIST */

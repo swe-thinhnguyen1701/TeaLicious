@@ -28,7 +28,7 @@
 }
 
 .container button{
-    background-color: #2a5d5a;
+    background-color: #36581e;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -142,9 +142,9 @@
 }
 
 .toggle{
-    background-color: #345d5b;
+    background-color: #36581e;
     height: 100%;
-    background: linear-gradient(to right, #345d5b, #2a5d5a);
+    background: linear-gradient(to right, #395625, #36581e);
     color: #fff;
     position: relative;
     left: -100%;
@@ -188,4 +188,10 @@
 
 .container.active .toggle-right{
     transform: translateX(200%);
+}
+
+/* AUTH */
+.auth-form{
+    /* background-image: url("../../assets//images/image-3.jpg");
+    background-size: cover; */
 }

@@ -32,7 +32,7 @@ input {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--green);
-  box-shadow: 0 2px 2px var(--green);
+  /* box-shadow: 0 2px 2px var(--green); */
   background-color: var(--black);
   color: var(--white);
 }
