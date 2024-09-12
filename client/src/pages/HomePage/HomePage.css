@@ -24,14 +24,13 @@
 
 /* CSS for statement */
 .statement {
-  width: 100%;
-  text-align: end;
-  padding-right: 10%;
-  padding-top: 30px;
-  padding-bottom: 60px;
-  font-size: 1.5rem;
-  transform: scale(0.94);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  font-size: 1.3rem;
+  transform: scale(0.94);
+  width: 100%;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .statement span {
@@ -101,6 +100,18 @@ span:nth-child(8) {
   animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
+@media screen and (min-width: 768px){
+  .statement{
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1300px){
+  .statement{
+    font-size: 1.9rem;
+  }
+}
+
 /* CSS for button */
 .button {
   width: 15%;
@@ -111,7 +122,7 @@ span:nth-child(8) {
 }
 
 .home-page {
-  min-height: 78vh;
+  min-height: 79vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,6 +138,18 @@ span:nth-child(8) {
 
 .home-page-statement {
   margin-bottom: 40px;
+}
+
+.home-page-img-container{
+  border-radius: 30px;
+  overflow: hidden;
+  max-width: 1000px;
+  margin-bottom: 30px;
+  box-shadow: 1px 1px 30px #9e7120;
+}
+
+.home-page-img{
+  width: 100%;
 }
 
 .get-started-link {
@@ -145,7 +168,7 @@ span:nth-child(8) {
 }
 
 .get-started-link:hover .icon {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 @media screen and (min-width: 768px) {

@@ -7,44 +7,53 @@
 :root {
   /* CSS variables */
 
-  --green: rgb(5, 165, 5); /* UPDATE LATER IF NEEDED */
-  --black: rgba(0, 0, 0, 0.664); 
-  --green: rgb(34, 156, 34); /* UPDATE LATER IF NEEDED */
+  --green: rgb(5, 165, 5);
+  /* UPDATE LATER IF NEEDED */
+  --black: rgba(0, 0, 0, 0.664);
+  --green: rgb(34, 156, 34);
+  /* UPDATE LATER IF NEEDED */
   --black: rgba(0, 0, 0, 0.925);
-  --green: rgb(5, 165, 5); /* UPDATE LATER IF NEEDED */
-  --black: rgba(0, 0, 0, 0.664); 
+  --green: rgb(5, 165, 5);
+  /* UPDATE LATER IF NEEDED */
+  --black: rgba(0, 0, 0, 0.664);
   --white: white;
-  --cambria: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /* UPDATE LATER */
-  --italic: italic; /* UPDATE LATER */
+  --cambria: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* UPDATE LATER */
+  --italic: italic;
+  /* UPDATE LATER */
 }
 
 html {
-  font-family: var(--cambria); /* UPDATE LATER */
+  font-family: var(--cambria);
+  /* UPDATE LATER */
   line-height: 1.5;
-  font-weight: 400; /* UPDATE LATER */
+  font-weight: 400;
+  /* UPDATE LATER */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased; /* CHECK IF NEEDED */
-  -moz-osx-font-smoothing: grayscale;  /* CHECK IF NEEDED */
+  -webkit-font-smoothing: antialiased;
+  /* CHECK IF NEEDED */
+  -moz-osx-font-smoothing: grayscale;
+  /* CHECK IF NEEDED */
   /* color: var(--green); */
   font-size: 62.5%;
 }
 
-h1, h2, h3, h4, p{
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0;
 }
 
 /* CSS for body */
 body {
-  /*margin: 0 auto;*/
   margin: 0 auto;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--black);
-  max-width: 1400px;
-  /* background-color: var(--black); */
-  /* color: black; */
+  /* max-width: 1400px; */
   font-size: 1.2rem;
 }
 
@@ -53,16 +62,14 @@ body {
 /* CSS for ancers */
 a {
   font-weight: 500;
-  /* color:var(--green); */
   text-decoration: inherit;
 }
 
 a:hover {
-  /* color: var(--white); */
   text-decoration: underline;
 }
 
-a:visited{
+a:visited {
   color: black;
 }
 
@@ -79,47 +86,38 @@ button {
   transition: border-color 0.25s; */
 }
 
-.btn{
+.btn {
   border: none;
   background-color: unset;
   cursor: pointer;
 }
 
-/* button:hover {
-  border-color: var(--white);
-} */
-
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
-
 /* PAGE */
-.page{
+.page {
   min-height: 80vh;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   max-width: 1400px;
 }
 
 /* ALIGNMENT */
-.d-center-xy{
+.d-center-xy {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.mb-20{
+.mb-20 {
   margin-bottom: 20px;
 }
 
 /* LIST */
-.list{
+.list {
   margin: 0;
   padding: 0;
 }
 
-.list-item{
+.list-item {
   list-style: none;
 }
 
@@ -127,39 +125,28 @@ button:focus-visible {
   display: flex;
 }
 
-.list-inline .list-item{
+.list-inline .list-item {
   margin-right: 15px;
 }
 
-.list-inline .list-item:last-child{
+.list-inline .list-item:last-child {
   margin: 0;
 }
 
 /* LINK */
-.link{
+.link {
   color: black;
   cursor: pointer;
 }
 
-.link:visited{
+.link:visited {
   color: black;
 }
+
+a:hover {
+  color: var(--white);
 }
 
-
-
-/* Media queries */ /* UPDATE LATER 
-@media (prefers-color-scheme: light) {
-  /* :root {
-    color: var(--green);
-    background-color: var(--black);
-  } */
-
-  a:hover {
-    color: var(--white);
-  }
-
-  button {
-    background-color: var(--black);
-  }
-}*/
+button {
+  /* background-color: var(--black); */
+}

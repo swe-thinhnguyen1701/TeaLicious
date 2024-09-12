@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import "./HomePage.css";
+import img from "../../assets/images/image-1.jpg"
 
 function HomePage() {
     return (
@@ -27,6 +28,11 @@ function HomePage() {
                 <span>you </span>
                 <span>make </span>
                 <span>it...</span>
+            </div>
+            {/* <div className="container">
+            </div> */}
+            <div className="home-page-img-container">
+                <img src={img} alt="home page image" className="home-page-img" />
             </div>
             <Link to="/products" className="link get-started-link">
                 GET STARTED <FontAwesomeIcon icon={faChevronRight} className="icon" />

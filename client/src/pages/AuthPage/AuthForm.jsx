@@ -15,7 +15,7 @@ function AuthForm() {
   };
 
   return (
-    <section className="page d-center-xy">
+    <section className="page d-center-xy auth-form">
       <div className={`page d-center-xy container ${!isLogin ? "active" : ""}`}>
         {/* Signup Form */}
         <Signup />
