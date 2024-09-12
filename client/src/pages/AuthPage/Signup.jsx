@@ -33,7 +33,7 @@ function Signup() {
         });
     }
     return (
-        <div className="form-container sign-up">
+        <div className="form-auth-container sign-up">
             <form onSubmit={handleSubmitForm}>
                 <h1>Create Account</h1>
                 <input
