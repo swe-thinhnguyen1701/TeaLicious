@@ -37,7 +37,7 @@ const UserPage = () => {
         }
     };
     return (
-        <div className="user-page">
+        <div className="user-page page">
             <h1 className="profile">Profile</h1>
             <div className="form-container">
                 <div className="input-field">
