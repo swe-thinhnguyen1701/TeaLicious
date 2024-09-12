@@ -15,7 +15,7 @@ function ProductsPage() {
             console.log("no cart");
             newCart().then(res => {
                 localStorage.setItem("cart_id", res.data.newCart._id);
-            });   
+            });
         }else{
             syncCart({variables: {cartId: cartId}}).then(res => {
                 localStorage.setItem("cart_id", res.data.syncCart.cartId);
