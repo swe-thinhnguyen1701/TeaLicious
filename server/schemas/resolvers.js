@@ -62,18 +62,27 @@ const resolvers = {
         },
         addItemToCart: async (_parent, { _id, productId, quantity }) => {
             try {
-                const cart = await Cart.findByIdAndUpdate(
-                    _id,
-                    { $push: { items: { productId, quantity } } },
-                    { new: true }
-                );
-
-                if (!cart) {
-                    console.error("Cannot find cart id");
-                    throw new Error("Cart not found");
+                const product = await Product.findById(productId);
+                console.log(product.stock);
+                
+                if (quantity <= 0|| quantity > product.stock){
+                    throw new Error(`Invalid quantity. Quantity must be greater than 0 and not exceed available stock (${product.stock})`);
+                } else {
+                    const cart = await Cart.findByIdAndUpdate(
+                        _id,
+                        { $push: { items: { productId, quantity } } },
+                        { new: true }
+                    );
+    
+                    if (!cart) {
+                        console.error("Cannot find cart id");
+                        throw new Error("Cart not found");
+                    }
+    
+                    return cart;
                 }
-
-                return cart;
+            
+              
             } catch (error) {
                 console.error("ERROR occurs while adding ITEM to CART");
                 throw new Error("Failed to add item to cart");
