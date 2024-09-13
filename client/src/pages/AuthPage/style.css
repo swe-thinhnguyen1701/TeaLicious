@@ -67,7 +67,8 @@
     outline: none;
 }
 
-.form-auth-container{
+
+.auth-form-container{
     position: absolute;
     top: 0;
     height: 100%;
@@ -77,6 +78,7 @@
 .sign-in{
     left: 0;
     width: 50%;
+
     z-index: 2;
 }
 
