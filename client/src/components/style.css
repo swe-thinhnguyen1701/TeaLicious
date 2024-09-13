@@ -3,7 +3,7 @@
 .nav-right {
     margin-right: 30px;
     font-size: 1.1rem;
-    color: var(--black);
+    color: var(--white);
 }
 
 /* NAVIGATION BAR */
@@ -12,7 +12,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background: linear-gradient(to top, var(--green) 0%, var(--gold) 5%, var(--green) 100%) var(--green);
+    background: var(--green);
     padding: 0.5rem 0;
     margin-right: 30px;
 }
@@ -53,6 +53,9 @@ nav {
     padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    width: 400px;  /* Set a fixed width */
+    height: 600px; /* Set a fixed height */
+    box-sizing: border-box;
 }
 
 .card-img {
@@ -102,9 +105,13 @@ nav {
 .product-price {
     margin-bottom: 15px;
 }
+.product-description {
+    height: 100px;
+}
 
 .product-name {
     font-size: 2.4rem;
+    height: 100px;
 }
 
 .product-price {
@@ -125,6 +132,18 @@ nav {
     text-decoration: underline;
 }
 
+.btn {
+    background-color: var(--white);
+    margin-top: 12px;
+    justify-content: space-between;
+}
+
+.input {
+    margin-left: 5px;
+    margin-right: 5px;
+   height: 40px;
+    box-shadow: none;
+}
 @media screen and (min-width: 768px) {
     .card {
         width: 250px;
@@ -162,7 +181,7 @@ footer {
     justify-content: flex-start;
     padding: 0.5rem 0;
     margin-top: auto;
-    background: linear-gradient(to bottom, var(--green) 0%, var(--gold) 5%, var(--green) 100%) var(--green);
+    background: var(--green);
     /*position: fixed;*/
     bottom: 0;
     width: 100%;
@@ -207,7 +226,7 @@ footer {
 }
 
 .category:hover .btn {
-    color: white;
+    color: var(--green);
 }
 
 @media screen and (min-width: 768px) {
@@ -225,8 +244,9 @@ footer {
 .category.category-selected {
     background-color: #a07321;
 
+
     .btn {
-        color: white;
+        color: var();
     }
 }
 
