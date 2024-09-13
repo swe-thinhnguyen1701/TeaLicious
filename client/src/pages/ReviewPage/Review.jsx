@@ -1,10 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_CART } from "../../utils/queries";
 
 function Review() {
     const [loading, data] = useQuery(GET_CART);
     const cartId = localStorage.getItem("cart_id");
+    console.log(cartId);
+    
 
     if (loading) return <h2>Loading...</h2>
     if (!data || !data.getCart(cartId)) return <h2>No items in cart</h2>
