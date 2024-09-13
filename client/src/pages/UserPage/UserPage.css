@@ -1,7 +1,7 @@
 /* CSS for userPage*/
 .user-page {
   max-width: 350px;
-  margin-left: 30px;
+  margin-left: 60px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -12,16 +12,20 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
 .profile {
   margin-top: 5px;
   margin-bottom: 7px;
+  margin-left: 25px;
 }
 
 .input-field {
   display: flex;
   flex-direction: column;
+  background-color: var(--white);
 }
 
 label {
@@ -32,15 +36,15 @@ input {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--green);
-  /* box-shadow: 0 2px 2px var(--green); */
-  background-color: var(--black);
+  box-shadow: 0 2px 2px var(--green);
+  background-color: var(--white);
   color: var(--white);
 }
 
 .address-input {
   border: 1px solid var(--green);
   box-shadow: 0 2px 2px var(--green);
-  background-color: var(--black);
+  background-color: var(--white);
   color: var(--white);
   margin-bottom: 10px;
 }
@@ -60,3 +64,5 @@ input {
 .update-button:hover {
   color: var(--white);
 }
+
+

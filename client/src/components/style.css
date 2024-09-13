@@ -1,22 +1,19 @@
-/* NAVIGATION BAR */
+/* CSS for Navbar */
 .nav-right {
-    /* Charles */
     margin-right: 30px;
     font-size: 1.1rem;
-    color: rgb(58, 172, 58)
+    color: var(--black);
 }
 
 /* NAVIGATION BAR */
 nav {
-    align-items: center;
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
-    margin: 0 auto;
-    max-width: 1400px;
-    padding: 10px 15px;
+    align-items: center;
     width: 100%;
-    margin-top: 10px;
+    background: linear-gradient(to top, var(--green) 0%, var(--gold) 5%, var(--green) 100%) var(--green);
+    padding: 0.5rem 0;
+    margin-right: 30px;
 }
 
 .logo {
@@ -157,23 +154,28 @@ nav {
 
 
 
-/* FOOTER */
+/* CSS for footer */
 footer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
+    height: 65px;
+    justify-content: flex-start;
+    padding: 0.5rem 0;
+    margin-top: auto;
+    background: linear-gradient(to bottom, var(--green) 0%, var(--gold) 5%, var(--green) 100%) var(--green);
+    /*position: fixed;*/
+    bottom: 0;
     width: 100%;
-    background: #2a5d5a;
 }
 
 .signature {
     color: white;
     font-size: 1rem;
     font-family: var(--cambria);
-    /* UPDATE LATER */
     font-weight: bold;
+    margin-left: 30px;
+    padding-top: 10px;
 }
+
 
 @media screen and (min-width: 1400px) {
     .signature {

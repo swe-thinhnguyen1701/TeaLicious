@@ -14,12 +14,11 @@
   }
 }
 
-
-
 /* CSS for title */
-.title {
+.home-page-title {
   text-align: center;
-  /* import font for title */
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* CSS for statement */
@@ -29,8 +28,11 @@
   transform: scale(0.94);
   width: 100%;
   margin-bottom: 30px;
+  padding-top: 0;
   display: flex;
   justify-content: center;
+  color:var(--green);
+  font-weight: bold;
 }
 
 .statement span {
@@ -133,7 +135,7 @@ span:nth-child(8) {
 .home-page-title {
   font-size: 5rem;
   margin-bottom: 20px;
-  color: #9e7120;
+  color: var(--gold);
 }
 
 .home-page-statement {

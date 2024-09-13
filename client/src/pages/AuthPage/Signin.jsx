@@ -26,7 +26,7 @@ function Signin() {
     });
   };
   return (
-    <div className="form-container sign-in">
+    <div className="auth-form-container sign-in">
       <form onSubmit={handleFormSubmit}>
         <h1>Sign In</h1>
         <input
