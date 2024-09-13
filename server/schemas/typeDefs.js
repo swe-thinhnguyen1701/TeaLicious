@@ -17,15 +17,14 @@ type User {
   
   type Cart {
     _id: ID!
-    userId: ID
     items: [CartItem]
     total: Float
     createdAt: String
   }
 
   type CartItem {
-    productId: Product
-    quantity: Int
+    productId: ID!
+    quantity: Int!
   }
 
   type Product {

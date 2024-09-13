@@ -8,8 +8,7 @@ const resolvers = {
             throw AuthenticationError;
         },
         getCart: async (_parent, { _id }) => {
-            if (context.cart) return Cart.findById({ _id: _id }).populate("items.productId");
-            throw AuthenticationError;
+            return Cart.findById(_id);
         },
         getProducts: async (_parent, { categoryId }) => {
             return Product.find({ category: categoryId }).populate('category');
@@ -107,14 +106,18 @@ const resolvers = {
             }
         },
         syncCart: async (_parent, { cartId }, context) => {
-            if (!context.user) return;
+            
+            if (!context.user){
+                console.log("CONTEXT :>>", context.user);
+                return;
+            }
             try {
                 const user = await User.findById(context.user._id);
 
                 if(!user.cart){
                     await user.updateOne({cart: cartId},{new: true});
                 }
-                // console.log(user);
+                console.log(user);
                 const updateUser = await User.findById(context.user._id);
                 return updateUser;
             } catch (error) {

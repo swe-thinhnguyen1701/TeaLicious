@@ -50,15 +50,8 @@ export const NEW_CART = gql`
   mutation newCart {
     newCart {
       _id
-      userId
       items {
-        productId {
-          _id
-          name
-          price
-          weight
-          image
-        }
+        productId
         quantity
       }
       total
@@ -72,12 +65,7 @@ export const ADD_ITEM_TO_CART = gql`
     addItemToCart(_id: $_id, productId: $productId, quantity: $quantity) {
       _id
       items {
-        productId {
-          _id
-          name
-          description
-          price
-        }
+        productId
         quantity
       }
     }
@@ -124,6 +112,9 @@ export const SYNC_CART = gql`
   mutation syncCart($cartId: ID!){
     syncCart(cartId: $cartId) {
       _id
+      cart {
+        _id
+      }
     }
   }
 `

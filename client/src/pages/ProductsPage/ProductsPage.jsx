@@ -16,9 +16,12 @@ function ProductsPage() {
             newCart().then(res => {
                 localStorage.setItem("cart_id", res.data.newCart._id);
             });
-        }else{
-            syncCart({variables: {cartId: cartId}}).then(res => {
-                localStorage.setItem("cart_id", res.data.syncCart.cartId);
+        } else {
+            syncCart({ variables: { cartId: cartId } }).then(res => {
+                if (!res.data.syncCart) return;
+                console.log("sync");
+                console.log(res.data.syncCart);
+                localStorage.setItem("cart_id", res.data.syncCart.cart._id);
             });
         }
     }, [newCart, syncCart]);

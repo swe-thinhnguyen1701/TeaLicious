@@ -46,7 +46,7 @@ function ProductDetail({ productId }) {
             console.log("cartID :>>", cartId);
             console.log("product._id :>>", product._id);
             console.log("quantity :>>", quantity);
-            
+            console.log("product :>>", product);
             await addItemToCart({
                 variables: {
                     _id: cartId,
