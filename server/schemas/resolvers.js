@@ -65,7 +65,7 @@ const resolvers = {
                 const product = await Product.findById(productId);
                 console.log(product.stock);
                 
-                if (quantity <= 0|| quantity > product.stock){
+                if (quantity <= 0 || quantity > product.stock){
                     throw new Error(`Invalid quantity. Quantity must be greater than 0 and not exceed available stock (${product.stock})`);
                 } else {
                     const cart = await Cart.findByIdAndUpdate(
