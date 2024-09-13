@@ -88,10 +88,10 @@ const resolvers = {
                 throw new Error("Failed to add item to cart");
             }
         },
-        removeItemFromCart: async (_parent, { productId }, context) => {
+        removeItemFromCart: async (_parent, { _id, productId }) => {
             try {
                 const cart = await Cart.findByIdAndUpdate(
-                    context.cart,
+                    _id,
                     { $pull: { items: { productId } } },
                     { new: true }
                 );

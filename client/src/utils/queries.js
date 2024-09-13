@@ -1,4 +1,4 @@
-import {gql} from '@apollo/client';
+import { gql } from '@apollo/client';
 
 export const GET_ME = gql`
   query Query{
@@ -9,12 +9,7 @@ export const GET_ME = gql`
       cart {
         _id
         items {
-          productId {
-            _id
-            name
-            description
-            price
-          }
+          productId
           quantity
         }
       }
@@ -27,12 +22,7 @@ export const GET_CART = gql`
     getCart(_id: $_id) {
       _id
       items {
-        productId {
-          _id
-          name
-          description
-          price
-        }
+        productId
         quantity
       }
     }

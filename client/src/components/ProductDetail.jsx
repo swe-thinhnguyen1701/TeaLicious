@@ -43,10 +43,7 @@ function ProductDetail({ productId }) {
 
     const addToCartHandler = async () => {
         try {
-            console.log("cartID :>>", cartId);
-            console.log("product._id :>>", product._id);
-            console.log("quantity :>>", quantity);
-            console.log("product :>>", product);
+            if(quantity <= 1 || quantity > stock)
             await addItemToCart({
                 variables: {
                     _id: cartId,
