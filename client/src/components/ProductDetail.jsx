@@ -43,7 +43,9 @@ function ProductDetail({ productId }) {
 
     const addToCartHandler = async () => {
         try {
-            if(quantity <= 1 || quantity > stock)
+            if(quantity <= 1 || quantity > product.stock)
+                return;
+
             await addItemToCart({
                 variables: {
                     _id: cartId,
@@ -51,6 +53,7 @@ function ProductDetail({ productId }) {
                     quantity: quantity
                 }
             });
+            confirm(`${product.name} has been added to your cart`);
         } catch (error) {
             console.error("ERROR occurs while adding ITEM to CART", error);
             throw new Error("Failed to add item to cart");

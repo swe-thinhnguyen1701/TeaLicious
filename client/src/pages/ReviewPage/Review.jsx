@@ -14,15 +14,17 @@ function Review() {
 
     return (
         <div className="page cart-container">
-            {data.getCart.items.map(item => {
-                return (
-                    <CartItem
-                        key={item.productId}
-                        productId={item.productId}
-                        quantity={item.quantity}
-                    />
-                )
-            })}
+            {data.getCart.items.length === 0 ?
+                <h2>No items in cart</h2>
+                : data.getCart.items.map(item => {
+                    return (
+                        <CartItem
+                            key={item.productId}
+                            productId={item.productId}
+                            quantity={item.quantity}
+                        />
+                    )
+                })}
         </div>
     )
 }
