@@ -68,22 +68,46 @@ const resolvers = {
                 if (quantity <= 0 || quantity > product.stock){
                     throw new Error(`Invalid quantity. Quantity must be greater than 0 and not exceed available stock (${product.stock})`);
                 } else {
-                    const cart = await Cart.findByIdAndUpdate(
+                    const cart = await Cart.findOne(
+                        { _id: _id }
+                    );
+
+                    let inCart = false;
+
+                    const updatedItems = cart.items.map(item => {
+                        if (item.productId == productId) {
+                            inCart = true;
+                            return {
+                                productId: item.productId,
+                                quantity: item.quantity + quantity
+                            }
+                        } else {
+                            return item;
+                        }
+                    })
+
+                    if(!inCart) {
+                        updatedItems.push({ productId, quantity });
+                    }
+
+
+                    const updatedCart = await Cart.findByIdAndUpdate(
                         _id,
-                        { $push: { items: { productId, quantity } } },
+                        { $set: { items: updatedItems } },
                         { new: true }
                     );
     
-                    if (!cart) {
+                    if (!updatedCart) {
                         console.error("Cannot find cart id");
                         throw new Error("Cart not found");
                     }
     
-                    return cart;
+                    return updatedCart;
                 }
             
               
             } catch (error) {
+                console.log(error)
                 console.error("ERROR occurs while adding ITEM to CART");
                 throw new Error("Failed to add item to cart");
             }
