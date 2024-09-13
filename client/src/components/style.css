@@ -6,6 +6,8 @@
     color: var(--white);
 }
 
+
+
 /* NAVIGATION BAR */
 nav {
     display: flex;
@@ -30,6 +32,11 @@ nav {
 
 .auth-link {
     font-size: 1.3rem;
+    color: var(--white);
+}
+
+.auth-link:hover {
+color: var(--gold);
 }
 
 @media screen and (min-width: 768px) {

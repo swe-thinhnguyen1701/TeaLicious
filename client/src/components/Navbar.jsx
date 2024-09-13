@@ -17,7 +17,7 @@ function Navbar() {
                     </Link>
                 </div>
                 <div className="nav-right">
-                    <UserStatus isLoggedIn={Auth.loggedIn()}/>
+                    <UserStatus  isLoggedIn={Auth.loggedIn()}/>
                 </div>
             </nav>
         </header>
