@@ -74,16 +74,11 @@ export const ADD_ITEM_TO_CART = gql`
 
 
 export const REMOVE_ITEM_FROM_CART = gql`
-  mutation removeItemFromCart($productId: ID!) {
-    removeItemFromCart(productId: $productId) {
+  mutation removeItemFromCart($_id: ID!,$productId: ID!) {
+    removeItemFromCart(_id: $_id, productId: $productId) {
       _id
       items {
-        productId {
-          _id
-          name
-          description
-          price
-        }
+        productId
         quantity
       }
     }
