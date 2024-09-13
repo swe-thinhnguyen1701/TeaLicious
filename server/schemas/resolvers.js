@@ -101,14 +101,35 @@ const resolvers = {
                 throw new Error("Failed to remove item from cart");
             }
         },
-        updateCartItem: async (_parent, { productId, quantity }, context) => {
+        updateCartItem: async (_parent, {_id, productId, quantity }, context) => {
             try {
-                const cart = await Cart.findOneAndUpdate(
-                    { _id: context.cart, "items.productId": productId },
-                    { $set: { "items.$.quantity": quantity } },
+                const cart = await Cart.findOne(
+                    { _id: _id }
+                );
+
+                console.log(cart)
+
+                const updatedItems = cart.items.map(item => {
+                    console.log(item.productId + " vs " + productId)
+                    if (item.productId == productId) {
+                        console.log("is equals")
+                        return {
+                            productId: item.productId,
+                            quantity: quantity
+                        }
+                    } else {
+                        return item;
+                    }
+                })
+
+                console.log(updatedItems)
+
+                const updatedCart = await Cart.findOneAndUpdate(
+                    { _id: _id },
+                    { $set: { items: updatedItems } },
                     { new: true }
                 );
-                return cart;
+                return updatedCart;
             } catch (error) {
                 console.error("ERROR occurs while updating ITEM in CART");
                 throw new Error("Failed to update item in cart");

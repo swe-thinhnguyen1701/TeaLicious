@@ -59,7 +59,7 @@ type User {
     newCart: Cart
     addItemToCart(_id: ID!, productId: ID!, quantity: Int): Cart
     removeItemFromCart(_id: ID!, productId: ID!): Cart
-    updateCartItem(productId: ID!, quantity: Int!): Cart
+    updateCartItem(_id: ID!, productId: ID!, quantity: Int!): Cart
   }
 
   type Auth {
