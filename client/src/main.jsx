@@ -10,6 +10,7 @@ import UserPage from "./pages/UserPage/UserPage.jsx";
 import Review from "./pages/ReviewPage/Review.jsx"
 import ProductsPage from "./pages/ProductsPage/ProductsPage.jsx";
 import AuthForm from "./pages/AuthPage/AuthForm.jsx";
+import ItemPage from "./pages/ItemPage/ItemPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/auth",
         element: <AuthForm />
+      },
+      {
+        path: "/product/:id",
+        element: <ItemPage />
       }
     ]
   }
