@@ -68,22 +68,46 @@ const resolvers = {
                 if (quantity <= 0 || quantity > product.stock){
                     throw new Error(`Invalid quantity. Quantity must be greater than 0 and not exceed available stock (${product.stock})`);
                 } else {
-                    const cart = await Cart.findByIdAndUpdate(
+                    const cart = await Cart.findOne(
+                        { _id: _id }
+                    );
+
+                    let inCart = false;
+
+                    const updatedItems = cart.items.map(item => {
+                        if (item.productId == productId) {
+                            inCart = true;
+                            return {
+                                productId: item.productId,
+                                quantity: item.quantity + quantity
+                            }
+                        } else {
+                            return item;
+                        }
+                    })
+
+                    if(!inCart) {
+                        updatedItems.push({ productId, quantity });
+                    }
+
+
+                    const updatedCart = await Cart.findByIdAndUpdate(
                         _id,
-                        { $push: { items: { productId, quantity } } },
+                        { $set: { items: updatedItems } },
                         { new: true }
                     );
     
-                    if (!cart) {
+                    if (!updatedCart) {
                         console.error("Cannot find cart id");
                         throw new Error("Cart not found");
                     }
     
-                    return cart;
+                    return updatedCart;
                 }
             
               
             } catch (error) {
+                console.log(error)
                 console.error("ERROR occurs while adding ITEM to CART");
                 throw new Error("Failed to add item to cart");
             }
@@ -101,14 +125,35 @@ const resolvers = {
                 throw new Error("Failed to remove item from cart");
             }
         },
-        updateCartItem: async (_parent, { productId, quantity }, context) => {
+        updateCartItem: async (_parent, {_id, productId, quantity }, context) => {
             try {
-                const cart = await Cart.findOneAndUpdate(
-                    { _id: context.cart, "items.productId": productId },
-                    { $set: { "items.$.quantity": quantity } },
+                const cart = await Cart.findOne(
+                    { _id: _id }
+                );
+
+                console.log(cart)
+
+                const updatedItems = cart.items.map(item => {
+                    console.log(item.productId + " vs " + productId)
+                    if (item.productId == productId) {
+                        console.log("is equals")
+                        return {
+                            productId: item.productId,
+                            quantity: quantity
+                        }
+                    } else {
+                        return item;
+                    }
+                })
+
+                console.log(updatedItems)
+
+                const updatedCart = await Cart.findOneAndUpdate(
+                    { _id: _id },
+                    { $set: { items: updatedItems } },
                     { new: true }
                 );
-                return cart;
+                return updatedCart;
             } catch (error) {
                 console.error("ERROR occurs while updating ITEM in CART");
                 throw new Error("Failed to update item in cart");

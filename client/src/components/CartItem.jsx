@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_PRODUCT } from "../utils/queries";
-import { ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART } from "../utils/mutations";
+import { UPDATE_CART_ITEM, REMOVE_ITEM_FROM_CART } from "../utils/mutations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrash } from "@fortawesome/free-solid-svg-icons"
 
@@ -11,7 +11,7 @@ function CartItem({ productId, quantity }) {
         variables: { _id: productId }
     });
     const [removeItem] = useMutation(REMOVE_ITEM_FROM_CART);
-    const [addItemToCart] = useMutation(ADD_ITEM_TO_CART);
+    const [updateItemToCart] = useMutation(UPDATE_CART_ITEM);
     const [updateQuantity, setUpdateQuantity] = useState(quantity);
 
     if (loading) return <p>Loading...</p>;
@@ -58,11 +58,11 @@ function CartItem({ productId, quantity }) {
 
     const updateQuantityHandler = () => {
         try {
-            addItemToCart({
+            updateItemToCart({
                 variables: {
                     _id: cartId,
                     productId: product._id,
-                    quantity: quantity,
+                    quantity: updateQuantity,
                 }
             });
         } catch (error) {
