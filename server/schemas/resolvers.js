@@ -5,7 +5,7 @@ const resolvers = {
     Query: {
         me: async (_parent, _agrs, context) => {
             if (context.user) {
-                const user = await User.findOne({ _id: context.user._id });
+                const user = await User.findOne({ _id: context.user._id }).populate("cart");
                 console.log("BACKEND USER :>>", user);
                 return user;
             }
