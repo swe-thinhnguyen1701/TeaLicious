@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
-import { GET_PRODUCT } from "../utils/queries";
+import { GET_ME, GET_PRODUCT } from "../utils/queries";
 import { ADD_ITEM_TO_CART } from "../utils/mutations";
 import "./style.css";
 
@@ -9,7 +9,9 @@ function ProductDetail({ productId }) {
     const { loading, error, data } = useQuery(GET_PRODUCT, {
         variables: { _id: productId }
     });
-    const [addItemToCart] = useMutation(ADD_ITEM_TO_CART);
+    const [addItemToCart] = useMutation(ADD_ITEM_TO_CART, {
+        refetchQueries: [GET_ME]
+    });
     const [quantity, setQuantity] = useState(1);
 
     if (loading) return <p>Loading...</p>;

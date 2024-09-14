@@ -437,3 +437,29 @@ footer {
 .product-img{
     width: 100%;
 }
+
+#cart-icon {
+    font-size: 50px;
+}
+
+#cart-icon-parent {
+    position: relative;
+}
+
+
+#cart-total-quantity {
+    display: flex;
+    justify-content: center;
+    color: var(--green);
+    /* background-color: white; */
+    /* border-radius: 50px; */
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 3px;
+    left: 22px;
+    margin: 0px;
+    text-align: center;
+    font-weight: bolder;
+    z-index: 5;
+}

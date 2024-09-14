@@ -12,6 +12,12 @@ export const GET_ME = gql`
         state
         zip
       }
+      cart {
+        items {
+          quantity
+          productId
+        }
+      }
     }
   }
 `;
