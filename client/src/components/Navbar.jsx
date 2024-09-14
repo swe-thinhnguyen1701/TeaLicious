@@ -12,7 +12,7 @@ function Navbar() {
         <header className="mb-20">
             <nav>
                 <div className="nav-left">
-                    <Link to="/">
+                    <Link to="/products">
                         <img src={sampleLogo} className="logo" alt="TeaLicious logo" />
                     </Link>
                 </div>
