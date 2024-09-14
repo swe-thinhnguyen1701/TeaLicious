@@ -1,18 +1,48 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import { useQuery } from '@apollo/client';
+import { GET_ME } from '../../utils/queries';
 import './UserPage.css';
 
 const UserPage = () => {
+    const {loading, data, error} = useQuery(GET_ME);
+    // const user = data?.me || {}
+    const user = data?.me || {};
+    useEffect(() => {
+        console.log("loading:", loading);
+        console.log("error:", error);
+        console.log("data:", data);
+        if (error) {
+            console.error("ERROR :>>", error);
+        }
+    }, [data, error, loading]);
+    
     const [userInfo, setUserInfo] = useState({
-        username: '',
-        email: '',
+        username: user.username,
+        email: user.email,
         password: '',
         address: {
-            street: '',
-            city: '',
-            state: '',
-            zip: ''
+            street: user.address.street ? user.address.street : "",
+            city: user.address.city ? user.address.city : "",
+            state: user.address.state ? user.address.state : "",
+            zip: user.address.zip ? user.address.zip : ""
         }
     });
+
+    useEffect(() => {
+        hideData("username", user.username);
+        hideData("email", user.email);
+    }, [user]);
+
+    if (loading) return <p>Loading...</p>;
+
+    const hideData = (dataType, data) => {
+        if (dataType === "username")
+            userInfo.username = data.slice(0, 3) + "*******";
+        else {
+            const [emailUsername, emailDomain] = userInfo.email.split("@");
+            userInfo.email = emailUsername.slice(0, 3) + "********@" + emailDomain;
+        }
+    }
 
     const handleUpdate = () => {
         console.log('User info updated', userInfo);

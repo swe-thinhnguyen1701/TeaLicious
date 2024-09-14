@@ -1,17 +1,16 @@
 import { gql } from '@apollo/client';
 
 export const GET_ME = gql`
-  query Query{
+  query me{
     me {
       _id
       username
       email
-      cart {
-        _id
-        items {
-          productId
-          quantity
-        }
+      address {
+        street
+        city
+        state
+        zip
       }
     }
   }
