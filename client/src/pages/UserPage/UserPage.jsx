@@ -16,17 +16,17 @@ const UserPage = () => {
         }
     }, [data, error, loading]);
     
-    const [userInfo, setUserInfo] = useState({
-        username: user.username,
-        email: user.email,
-        password: '',
-        address: {
-            street: user.address.street ? user.address.street : "",
-            city: user.address.city ? user.address.city : "",
-            state: user.address.state ? user.address.state : "",
-            zip: user.address.zip ? user.address.zip : ""
-        }
-    });
+    // const [userInfo, setUserInfo] = useState({
+    //     username: user.username,
+    //     email: user.email,
+    //     password: '',
+    //     address: {
+    //         street: user.address.street ? user.address.street : "",
+    //         city: user.address.city ? user.address.city : "",
+    //         state: user.address.state ? user.address.state : "",
+    //         zip: user.address.zip ? user.address.zip : ""
+    //     }
+    // });
 
     useEffect(() => {
         hideData("username", user.username);

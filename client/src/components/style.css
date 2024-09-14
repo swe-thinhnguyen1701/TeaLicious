@@ -147,10 +147,20 @@ color: var(--gold);
     text-decoration: underline;
 }
 
-.btn {
+/* .btn {
     background-color: var(--white);
     margin-top: 12px;
     justify-content: space-between;
+} */
+
+.list-item .btn{
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100px;
+  height: 40px;
+  font-size: 15px;
 }
 
 .input {

@@ -73,8 +73,8 @@ function ProductDetail({ productId }) {
                 <div className="product-info">
                     <h2 className="product-name">{product.name}</h2>
                     <p className="product-description">{product.description}</p>
-                    <p className="product-stock">{product.stock}</p>
-                    <p className="product-weight">{product.weight}</p>
+                    <p className="product-stock">In Stock: {product.stock}</p>
+                    <p className="product-weight">Weight: {product.weight} Oz</p>
                     <p className="product-price">${product.price}</p>
                 </div>
                 <div className="product-action">
