@@ -1,6 +1,8 @@
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import sampleLogo from "../assets/sample-logo.jpg";
 import UserStatus from "./UserStatus";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
 
 import "./style.css"
 // Anna has the auth form
@@ -17,7 +19,10 @@ function Navbar() {
                     </Link>
                 </div>
                 <div className="nav-right">
-                    <UserStatus  isLoggedIn={Auth.loggedIn()}/>
+                    <Link to="/cart">
+                        <FontAwesomeIcon icon={faCartShopping} className="cart-icon"/>
+                    </Link>
+                    <UserStatus isLoggedIn={Auth.loggedIn()} />
                 </div>
             </nav>
         </header>

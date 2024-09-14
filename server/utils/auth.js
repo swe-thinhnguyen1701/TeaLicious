@@ -13,7 +13,7 @@ module.exports = {
         let token = req.body.token || req.query.token || req.headers.authorization;
 
         if (!token) return req;
-
+        console.log("Authorization Header: ", req.headers.authorization);
         if (req.headers.authorization) token = token.split(" ").pop().trim();
 
         try {

@@ -4,7 +4,11 @@ const { signToken, AuthenticationError } = require("../utils/auth");
 const resolvers = {
     Query: {
         me: async (_parent, _agrs, context) => {
-            if (context.user) return User.findOne({ _id: context.user._id }).populate("cart").populate("items.productId");
+            if (context.user) {
+                const user = await User.findOne({ _id: context.user._id });
+                console.log("BACKEND USER :>>", user);
+                return user;
+            }
             throw AuthenticationError;
         },
         getCart: async (_parent, { _id }) => {
@@ -64,8 +68,8 @@ const resolvers = {
             try {
                 const product = await Product.findById(productId);
                 console.log(product.stock);
-                
-                if (quantity <= 0 || quantity > product.stock){
+
+                if (quantity <= 0 || quantity > product.stock) {
                     throw new Error(`Invalid quantity. Quantity must be greater than 0 and not exceed available stock (${product.stock})`);
                 } else {
                     const cart = await Cart.findOne(
@@ -104,8 +108,8 @@ const resolvers = {
     
                     return updatedCart;
                 }
-            
-              
+
+
             } catch (error) {
                 console.log(error)
                 console.error("ERROR occurs while adding ITEM to CART");
@@ -160,16 +164,16 @@ const resolvers = {
             }
         },
         syncCart: async (_parent, { cartId }, context) => {
-            
-            if (!context.user){
+
+            if (!context.user) {
                 console.log("CONTEXT :>>", context.user);
                 return;
             }
             try {
                 const user = await User.findById(context.user._id);
 
-                if(!user.cart){
-                    await user.updateOne({cart: cartId},{new: true});
+                if (!user.cart) {
+                    await user.updateOne({ cart: cartId }, { new: true });
                 }
                 console.log(user);
                 const updateUser = await User.findById(context.user._id);
