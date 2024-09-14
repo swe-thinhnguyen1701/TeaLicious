@@ -7,7 +7,7 @@ function UserStatus({ isLoggedIn }) {
         return (
             <ul className="list list-inline">
                 <li className="list-item">
-                   <button className="btn" onClick={"/my-profile"}>My Profile</button>
+                   <Link to="/my-profile">My Profile</Link>
                 </li>
                 <li className="list-item">
                     <button className="btn" onClick={Auth.logout}>Logout</button>
