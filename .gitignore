@@ -6,3 +6,4 @@ queries copy.js
 resolvers copy.js
 typeDefs copy.js
 .DS_Store
+userPage copy.jsx
