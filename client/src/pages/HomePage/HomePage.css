@@ -19,6 +19,9 @@
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
+  background-image: url("../../assets/images/sampleBG.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* CSS for statement */

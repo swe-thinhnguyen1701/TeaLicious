@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import sampleLogo from "../assets/sample-logo.jpg";
+import sampleLogo from "../assets/images/logo.png";
 import UserStatus from "./UserStatus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons"

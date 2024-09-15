@@ -1,4 +1,3 @@
-
 /* CSS for Navbar */
 .nav-right {
     margin-right: 30px;
@@ -8,8 +7,6 @@
     align-items: center;
     gap: 20px;
 }
-
-
 
 /* NAVIGATION BAR */
 nav {
@@ -27,6 +24,8 @@ nav {
     height: 50px;
     border-radius: 50%;
     transition: transform 0.5s;
+    margin-left: 15px;
+    margin-top: 5px;
 }
 
 .logo:hover {
@@ -114,7 +113,6 @@ color: var(--gold);
     text-decoration: none;
 }
 
-
 .product-name,
 .product-description,
 .product-price {
@@ -135,7 +133,6 @@ color: var(--gold);
 }
 
 .add-item-btn {
-    /* background-color: #a07321; */
     border: 0;
     border-radius: 20px;
     width: 200px;
@@ -183,12 +180,6 @@ color: var(--gold);
     }
 }
 
-/* .link {
-    margin: 15px;
-} */
-
-
-
 /* CSS for footer */
 footer {
     display: flex;
@@ -197,7 +188,6 @@ footer {
     padding: 0.5rem 0;
     margin-top: auto;
     background: var(--green);
-    /*position: fixed;*/
     bottom: 0;
     width: 100%;
 }
@@ -231,7 +221,6 @@ footer {
 .category {
     padding: 5px 10px;
     border-radius: 10px;
-    /* border: 1px solid #2a5d5a; */
     transition: all 0.3s ease-in;
 }
 
@@ -264,8 +253,6 @@ footer {
         color: var();
     }
 }
-
-/* CSS for link */
 
 /* CARD */
 .card {
@@ -335,7 +322,6 @@ footer {
 }
 
 .add-item-btn {
-    /* background-color: #a07321; */
     border: 0;
     border-radius: 20px;
     width: 200px;
@@ -375,51 +361,6 @@ footer {
 .link {
     /* margin: 15px; */
 }
-
-/* CATEGORY LIST */
-/* .category-container {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    height: 20px;
-    margin-bottom: 50px;
-}
-
-.category {
-    padding: 5px 10px;
-    border-radius: 10px;
-    transition: all 0.3s ease-in;
-}
-
-.category:hover {
-    background-color: #a07321;
-    cursor: pointer;
-}
-
-.category:hover .btn {
-    color: white;
-}
-
-@media screen and (min-width: 768px) {
-    .category .btn {
-        font-size: 1.6rem;
-    }
-}
-
-@media screen and(min-width: 1400px) {
-    .category .btn {
-        font-size: 1.8rem;
-    }
-}
-
-.category.category-selected {
-    background-color: #a07321;
-
-    .btn {
-        color: white;
-    }
-} */
 
 /* PRODUCT DETAIL */
 .product-container{

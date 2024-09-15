@@ -31,9 +31,9 @@ function HomePage() {
             </div>
             {/* <div className="container">
             </div> */}
-            <div className="home-page-img-container">
+            {/* <div className="home-page-img-container">
                 <img src={img} alt="home page image" className="home-page-img" />
-            </div>
+            </div> */}
             <Link to="/products" className="link get-started-link">
                 GET STARTED <FontAwesomeIcon icon={faChevronRight} className="icon" />
             </Link>
