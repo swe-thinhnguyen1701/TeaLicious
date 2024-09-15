@@ -23,7 +23,7 @@ function Navbar() {
 
     const [totalItem, setTotalItem] = useState(0);
     useEffect(() => {
-        if (data)
+        if (data && data.getCart)
             setTotalItem(data.getCart.items.length);
     }, [data]);
 

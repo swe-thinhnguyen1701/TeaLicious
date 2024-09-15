@@ -85,6 +85,7 @@ function CartItem({ productId, quantity }) {
                         type="number"
                         value={updateQuantity}
                         min={1}
+                        max={999}
                         onChange={quantityOnChange} />
                     {/* <button
                         className="btn"
