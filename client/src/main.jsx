@@ -11,7 +11,7 @@ import Review from "./pages/ReviewPage/Review.jsx"
 import ProductsPage from "./pages/ProductsPage/ProductsPage.jsx";
 import AuthForm from "./pages/AuthPage/AuthForm.jsx";
 import ItemPage from "./pages/ItemPage/ItemPage.jsx";
-import Success from "./pages/SuccessPage/Success.jsx";
+import Success from "./pages/SuccessPage/SuccessPage.jsx";
 
 const router = createBrowserRouter([
   {

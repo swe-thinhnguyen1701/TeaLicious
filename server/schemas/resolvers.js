@@ -1,7 +1,7 @@
 const { User, Cart, Category, Product } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 require("dotenv").config();
-const stripe = require("stripe")(STRIPE_SECRET_KEY);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const resolvers = {
     Query: {
@@ -26,7 +26,7 @@ const resolvers = {
             const categories = await Category.find();
             return categories;
         },
-        checkout: async (_parent, { cartId }, context) => {
+        getCheckout: async (_parent, { cartId }, context) => {
             const url = new URL(context.headers.referer).origin;
 
             const cart = await Cart.findById(cartId);

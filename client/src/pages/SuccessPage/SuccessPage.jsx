@@ -5,7 +5,7 @@
  */
 import { useEffect } from "react";
 import { useMutation } from "@apollo/client";
-import { REMOVE_CART } from "../utils/mutations";
+import { REMOVE_CART } from "../../utils/mutations";
 
 function Success() {
     const [removeCart] = useMutation(REMOVE_CART);
