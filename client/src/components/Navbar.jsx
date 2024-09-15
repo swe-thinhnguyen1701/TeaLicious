@@ -7,27 +7,29 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
 import "./style.css"
 // Anna has the auth form
 
-import {useQuery} from "@apollo/client"
-import { GET_ME } from "../utils/queries";
+import { useQuery } from "@apollo/client"
+import { GET_CART } from "../utils/queries";
 
 import Auth from "../utils/auth";
+import { useEffect, useState } from "react";
 
 function Navbar() {
 
-    const {loading, data} = useQuery(GET_ME)
+    const cartId = localStorage.getItem("cart_id");
+    const { loading, error, data } = useQuery(GET_CART, {
+        variables: { _id: cartId }
+    });
+    console.log("FROM NAV :>>", data);
 
-    const totalQuantity = data?.me.cart.items.reduce((a, b) => a + b.quantity,
-    0) || 0;
-
-    if(loading){
-        return (
-            <h1>LOADING....</h1>
-        )
-    }
+    const [totalItem, setTotalItem] = useState(0);
+    useEffect(() => {
+        if (data)
+            setTotalItem(data.getCart.items.length);
+    }, [data]);
 
     return (
         <header className="mb-20">
-            
+
             <nav>
                 <div className="nav-left">
                     <Link to="/products">
@@ -37,8 +39,8 @@ function Navbar() {
                 <div className="nav-right">
                     <Link to="/cart">
                         <div id="cart-icon-parent">
-                            <FontAwesomeIcon id="cart-icon" icon={faCartShopping} className="cart-icon"/>
-                            <p id="cart-total-quantity">{totalQuantity}</p>
+                            <FontAwesomeIcon id="cart-icon" icon={faCartShopping} className="cart-icon" />
+                            <p id="cart-total-quantity">{totalItem}</p>
                         </div>
                     </Link>
                     <UserStatus isLoggedIn={Auth.loggedIn()} />

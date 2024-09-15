@@ -30,18 +30,6 @@ function CartItem({ productId, quantity }) {
         setUpdateQuantity(parseInt(e.target.value));
     }
 
-    // const addItemHandler = () => {
-    //     if (quantity < product.stock) {
-    //         setQuantity(quantity + 1);
-    //     }
-    // }
-
-    // const reduceItemHandler = () => {
-    //     if (quantity > 1) {
-    //         setQuantity(quantity - 1);
-    //     }
-    // }
-
     const removeItemHandler = async () => {
         try {
             await removeItem({
