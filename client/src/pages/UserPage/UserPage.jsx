@@ -1,85 +1,118 @@
-
 import { useEffect, useState } from "react";
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { GET_ME } from '../../utils/queries';
+import { UPDATE_ADDRESS } from '../../utils/mutations';
 import './UserPage.css';
-
 const UserPage = () => {
-  const { loading, data, error } = useQuery(GET_ME);
-  const [userInfo, setUserInfo] = useState({
-    username: '',
-    email: '',
-    password: '',
-    address: {
-      street: '',
-      city: '',
-      state: '',
-      zip: ''
+    const { loading, data } = useQuery(GET_ME);
+    const [updateAddressMutation] = useMutation(UPDATE_ADDRESS);
+    const [currentAddress, setCurrentAddress] = useState({ street: "", city: "", state: "", zip: "" });
+
+    useEffect(() => {
+        setCurrentAddress({
+            street: data?.me.address.street || "",
+            city: data?.me.address.city || "",
+            state: data?.me.address.state || "",
+            zip: data?.me.address.zip || ""
+        })
+    }, [data, updateAddressMutation])
+
+    const hideData = (dataType, value) => {
+        if (!value) {
+            return "";
+        } else {
+            if (dataType === "username")
+                return value?.slice(0, 3) + "*******";
+            else {
+                const [emailUsername, emailDomain] = value?.split("@");
+                return emailUsername.slice(0, 3) + "********@" + emailDomain;
+            }
+        }
     }
-  });
 
-  useEffect(() => {
-    if (data) {
-      setUserInfo({
-        username: data.me.username,
-        email: data.me.email,
-        address: data.me.address
-      });
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        if (['street', 'city', 'state', 'zip'].includes(name)) {
+            setCurrentAddress({ ...currentAddress, [name]: value });
+        }
+    };
+    const userInfo = {
+        username: hideData("username", data?.me.username),
+        email: hideData("email", data?.me.email),
     }
-  }, [data]);
-
-  const hideData = (dataType, data) => {
-    if (dataType === "username") {
-      setUserInfo({ ...userInfo, username: data.slice(0, 3) + "*******" });
-    } else {
-      const [emailUsername, emailDomain] = userInfo.email.split("@");
-      setUserInfo({ ...userInfo, email: emailUsername.slice(0, 3) + "********@" + emailDomain });
+    if (loading) {
+        return (
+            <h1>Still loading, please wait!</h1>
+        )
     }
-  };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    if (['street', 'city', 'state', 'zip'].includes(name)) {
-      setUserInfo({ ...userInfo, address: { ...userInfo.address, [name]: value } });
-    } else {
-      setUserInfo({ ...userInfo, [name]: value });
+    const formSubmitHandler = async (e) => {
+        e.preventDefault();
+        try {
+            await updateAddressMutation({
+                variables: {
+                    street: currentAddress.street,
+                    city: currentAddress.city,
+                    state: currentAddress.state,
+                    zip: currentAddress.zip
+                }
+            });
+            confirm("Update address success");
+        } catch (err) {
+            confirm("Update address failed");
+        }
     }
-  };
-
-  const handleUpdate = () => {
-    // Update the user's data here
-    console.log('User info updated', userInfo);
-  };
-
-  if (loading) return <p>Loading...</p>;
-
-  return (
-    <div className="user-page page">
-      <h1 className="profile">Profile</h1>
-      <div className="form-container">
-        <div className="input-field">
-          <label>Username:</label>
-          <input type="text" name="username" value={userInfo.username} />
+    return (
+        <div className="user-page page">
+            <h1 className="profile">Profile</h1>
+            <div className="form-container">
+                <div className="input-field">
+                    <label>Username:</label>
+                    <input type="text"
+                        name="username"
+                        value={userInfo.username}
+                        readOnly
+                    />
+                </div>
+                <div className="input-field">
+                    <label>Email:</label>
+                    <input type="text"
+                        name="email"
+                        value={userInfo.email}
+                        readOnly
+                    />
+                </div>
+                <form onSubmit={formSubmitHandler}>
+                    <div className="input-field">
+                        <label>Address:</label>
+                        <input className="address-input" type="text"
+                            name="street"
+                            placeholder="Street"
+                            value={currentAddress.street}
+                            onChange={handleChange} />
+                        <input className="address-input" type="text"
+                            name="city"
+                            placeholder="City"
+                            value={currentAddress.city}
+                            onChange={handleChange} />
+                        <input className="address-input" type="text"
+                            name="state"
+                            placeholder="State"
+                            value={currentAddress.state}
+                            maxLength={2}
+                            onChange={handleChange} />
+                        <input className="address-input" type="text"
+                            name="zip"
+                            placeholder="Zip code"
+                            value={currentAddress.zip}
+                            maxLength={5}
+                            minLength={5}
+                            onChange={handleChange} />
+                    </div>
+                    <button type="submit" className="update-button">UPDATE</button>
+                </form>
+            </div>
         </div>
-        <div className="input-field">
-          <label>Email:</label>
-          <input type="text" name="email" value={userInfo.email} />
-        </div>
-        <div className="input-field">
-          <label>Password:</label>
-          <input type="password" name="password" value={userInfo.password} onChange={handleChange} />
-        </div>
-        <div className="input-field">
-          <label>Address:</label>
-          <input className="address-input" type="text" name="street" placeholder="Street" value={userInfo.address.street} onChange={handleChange} />
-          <input className="address-input" type="text" name="city" placeholder="City" value={userInfo.address.city} onChange={handleChange} />
-          <input className="address-input" type="text" name="state" placeholder="State" value={userInfo.address.state} onChange={handleChange} />
-          <input className="address-input" type="text" name="zip code" placeholder="Zip code" value={userInfo.address.zip} onChange={handleChange} />
-        </div>
-        <button className="update-button" onClick={handleUpdate}>UPDATE</button>
-      </div>
-    </div>
-  );
+    );
 };
-
 export default UserPage;
