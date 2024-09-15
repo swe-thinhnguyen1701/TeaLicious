@@ -1,10 +1,5 @@
 /* CSS for userPage*/
 .user-page {
-  /* max-width: 350px;
-  margin-left: 60px;
-  padding: 20px; */
-  /* display: flex;
-  flex-direction: column; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,18 +9,22 @@
   text-align: left;
 }
 
+.user-page-image {
+  background-image: url('../../assets/images/profile-image.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  /* margin-left: 30px; */
-  /* margin-top: 20px; */
 }
 
 .profile {
   margin-top: 5px;
   margin-bottom: 7px;
-  /* margin-left: 25px; */
 }
 
 .input-field {
@@ -44,14 +43,12 @@ input {
   border: 1px solid var(--green);
   box-shadow: 0 2px 2px var(--green);
   background-color: var(--white);
-  /* color: var(--white); */
 }
 
 .address-input {
   border: 1px solid var(--green);
   box-shadow: 0 2px 2px var(--green);
   background-color: var(--white);
-  /* color: var(--white); */
   margin-bottom: 10px;
 }
 
@@ -70,5 +67,3 @@ input {
 .update-button:hover {
   color: var(--white);
 }
-
-

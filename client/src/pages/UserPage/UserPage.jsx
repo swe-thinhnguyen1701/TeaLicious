@@ -63,6 +63,7 @@ const UserPage = () => {
         }
     }
     return (
+        <div className="user-page-image">
         <div className="user-page page">
             <h1 className="profile">Profile</h1>
             <div className="form-container">
@@ -112,6 +113,7 @@ const UserPage = () => {
                     <button type="submit" className="update-button">UPDATE</button>
                 </form>
             </div>
+        </div>
         </div>
     );
 };

@@ -90,7 +90,18 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.list-inline {
+  display: flex;
+  align-items: center;
+}
 
+.list-inline .list-item {
+  margin-right: 15px;
+}
+
+.list-inline .list-item:last-child {
+  margin: 0;
+}
 
 /* Media queries */ /* UPDATE LATER 
 @media (prefers-color-scheme: light) {
@@ -215,17 +226,9 @@ button {
   list-style: none;
 }
 
-.list-inline {
-  display: flex;
-}
 
-.list-inline .list-item {
-  margin-right: 15px;
-}
 
-.list-inline .list-item:last-child {
-  margin: 0;
-}
+
 
 /* LINK 
 .link {

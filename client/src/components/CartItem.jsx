@@ -79,8 +79,8 @@ function CartItem({ productId, quantity }) {
             </div>
             <div className="cart-item-info-container">
                 <div className="cart-item-info">
-                    <h2 className="cart-item-name">{product.name}</h2>
-                    <p className="cart-item-price">${product.price}</p>
+                    <h2 className="cart-item-name"> {product.name}</h2>
+                    <p className="cart-item-price">Price: ${product.price}</p>
                 </div>
             </div>
             <div className="cart-item-action">
@@ -107,7 +107,7 @@ function CartItem({ productId, quantity }) {
                 </div>
             </div>
             <div className="cart-item-subtotal">
-                <span>${product.price * quantity}</span>
+                <span>Total amount: ${product.price * quantity}</span>
             </div>
             <div className="cart-item-remove" onClick={removeItemHandler}>
                 <FontAwesomeIcon icon={faTrash} className="icon" />
