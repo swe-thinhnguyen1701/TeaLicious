@@ -8,7 +8,6 @@
     gap: 20px;
 }
 
-/* NAVIGATION BAR */
 nav {
     display: flex;
     justify-content: space-between;
@@ -24,11 +23,8 @@ nav {
     height: 50px;
     border-radius: 50%;
     transition: transform 0.5s;
-
     margin-left: 15px;
     margin-top: 5px;
-
- 
 }
 
 .logo:hover {
@@ -41,10 +37,10 @@ nav {
 }
 
 .auth-link:hover {
-color: var(--gold);
+    color: var(--gold);
 }
 
-.cart-icon{
+.cart-icon {
     font-size: 2rem;
     color: white;
 }
@@ -70,9 +66,13 @@ color: var(--gold);
     padding: 10px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    width: 400px;  /* Set a fixed width */
-    height: 600px; /* Set a fixed height */
+    width: 400px;
+    /* Set a fixed width */
+    height: 600px;
+    /* Set a fixed height */
     box-sizing: border-box;
+    border: 2px solid var(--green);
+    box-shadow: 0 4px 8px var(--green);
 }
 
 .card-img {
@@ -121,6 +121,11 @@ color: var(--gold);
 .product-price {
     margin-bottom: 15px;
 }
+
+.product-quantity {
+    margin-bottom: 15px;
+
+}
 .product-description {
     height: 100px;
 }
@@ -149,16 +154,17 @@ color: var(--gold);
 
 .btn {
     background-color: var(--white);
-    margin-top: 12px;
+    /*margin-top: 12px;*/
     justify-content: space-between;
 }
 
 .input {
     margin-left: 5px;
     margin-right: 5px;
-   height: 40px;
+    height: 40px;
     box-shadow: none;
 }
+
 @media screen and (min-width: 768px) {
     .card {
         width: 250px;
@@ -250,8 +256,6 @@ footer {
 
 .category.category-selected {
     background-color: #a07321;
-
-
     .btn {
         color: var();
     }
@@ -319,9 +323,18 @@ footer {
     font-size: 2.4rem;
 }
 
+.product-description {
+    font-size: 1.3rem;
+}
+
+.product-stock,
+.product-weight {
+    font-size: 1.1rem;
+}
+
 .product-price {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .add-item-btn {
@@ -360,25 +373,28 @@ footer {
     }
 }
 
-/* CSS for link */
-.link {
-    /* margin: 15px; */
-}
-
 /* PRODUCT DETAIL */
-.product-container{
+.product-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
 }
 
-.product-img-container{
-    width: 200px;
-    height: 200px;
+@media screen and (min-width: 1024px) {
+    .product-container {
+        flex-direction: row;
+        width: 1000px;
+        gap: 20px;
+    }
 }
 
-.product-img{
+.product-img-container {
+    width: 500px;
+    height: 500px;
+}
+
+.product-img {
     width: 100%;
 }
 
@@ -395,8 +411,6 @@ footer {
     display: flex;
     justify-content: center;
     color: var(--green);
-    /* background-color: white; */
-    /* border-radius: 50px; */
     position: absolute;
     width: 15px;
     height: 15px;
@@ -409,54 +423,62 @@ footer {
 }
 
 
-#profile-link{
+#profile-link {
     color: white;
 }
 
-#bullet-points{
+#bullet-points {
     list-style: none;
 
-/* CART ITEM */
-.cart-item-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
+    /* CART ITEM */
+    .cart-item-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 
-.cart-item-action input{
-    width: 50px;
-}
+    .cart-item-action input {
+        width: 50px;
+    }
 
-.cart-item-action input::-webkit-outer-spin-button,
-.cart-item-action input::-webkit-inner-spin-button{
-    -webkit-appearance: none;
-}
+    .cart-item-action input::-webkit-outer-spin-button,
+    .cart-item-action input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
 
-.cart-item-img-container{
-    width: 200px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-}
+    .cart-item-img-container {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+    }
 
-.cart-item-img{
-    width: 100%;
-}
+    .cart-item-img {
+        width: 100%;
+    }
 
-.cart-item-price{
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+    .cart-item-name {
+        font-size: 2rem;
 
-.cart-item-remove{
-    cursor: pointer;
-    font-size: 2rem;
-}
+    }
 
-.cart-item-subtotal{
-    font-size: 2rem;
-}
+    .cart-item-price {
+        font-size: 2rem;
+        font-weight: bold;
+    }
 
-.cart-item-info{
-    width: 190px;
+    .cart-item-remove {
+        cursor: pointer;
+        font-size: 2rem;
+    }
+
+    .cart-item-subtotal {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .cart-item-info {
+        width: 190px;
+    }
 }
