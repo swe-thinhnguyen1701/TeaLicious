@@ -1,5 +1,7 @@
 const { User, Cart, Category, Product } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
+require("dotenv").config();
+const stripe = require("stripe")(STRIPE_SECRET_KEY);
 
 const resolvers = {
     Query: {
@@ -23,6 +25,48 @@ const resolvers = {
         getCategories: async () => {
             const categories = await Category.find();
             return categories;
+        },
+        checkout: async (_parent, { cartId }, context) => {
+            const url = new URL(context.headers.referer).origin;
+
+            const cart = await Cart.findById(cartId);
+
+            if (!cart) {
+                throw new Error("Cart not found with given ID");
+            }
+
+            const productList = [];
+            for (const item of cart.items) {
+                const product = await Product.findById(item.productId);
+                product.quantity = item.quantity;
+                productList.push(product);
+            }
+
+            const line_items = [];
+            for (const product of productList) {
+                line_items.push({
+                    price_data: {
+                        currency: "usd",
+                        product_data: {
+                            name: product.name,
+                            description: product.description,
+                            images: [product.image]
+                        },
+                        unit_amount: product.price * 100
+                    },
+                    quantity: product.quantity
+                });
+            }
+
+            const session = await stripe.checkout.sessions.create({
+                payment_method_types: ["card"],
+                line_items,
+                mode: "payment",
+                success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+                cancel_url: `${url}/`
+            });
+
+            return { session: session.id }
         }
     },
 
@@ -90,7 +134,7 @@ const resolvers = {
                         }
                     })
 
-                    if(!inCart) {
+                    if (!inCart) {
                         updatedItems.push({ productId, quantity });
                     }
 
@@ -100,12 +144,12 @@ const resolvers = {
                         { $set: { items: updatedItems } },
                         { new: true }
                     );
-    
+
                     if (!updatedCart) {
                         console.error("Cannot find cart id");
                         throw new Error("Cart not found");
                     }
-    
+
                     return updatedCart;
                 }
 
@@ -129,7 +173,7 @@ const resolvers = {
                 throw new Error("Failed to remove item from cart");
             }
         },
-        updateCartItem: async (_parent, {_id, productId, quantity }, context) => {
+        updateCartItem: async (_parent, { _id, productId, quantity }, context) => {
             try {
                 const cart = await Cart.findOne(
                     { _id: _id }
@@ -166,21 +210,34 @@ const resolvers = {
         syncCart: async (_parent, { cartId }, context) => {
 
             if (!context.user) {
-                console.log("CONTEXT :>>", context.user);
                 return;
             }
+
             try {
                 const user = await User.findById(context.user._id);
 
                 if (!user.cart) {
                     await user.updateOne({ cart: cartId }, { new: true });
                 }
-                console.log(user);
                 const updateUser = await User.findById(context.user._id);
                 return updateUser;
             } catch (error) {
                 console.error("ERROR occurs while syncing CART");
                 throw new Error("Failed to sync cart");
+            }
+        },
+        removeCart: async (_parent, { cartId }, context) => {
+            try {
+                if (context.user) {
+                    await User.findByIdAndUpdate(context.user._id, { cart: null });
+                } else {
+                    await Cart.findByIdAndDelete(cartId);
+                }
+
+                return { success: true, message: "Cart is removed" };
+            } catch (error) {
+                console.error("ERROR occurs while removing CART");
+                throw new Error("Failed to remove cart");
             }
         }
     }

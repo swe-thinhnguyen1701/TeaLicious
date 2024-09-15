@@ -79,3 +79,11 @@ export const GET_CATEGORIES = gql`
     }
   }
 `;
+
+export const CHECKOUT = gql`
+  query getCheckout($cartId: ID!) {
+    getCheckout(cartId: $cartId) {
+      session
+    }
+  }
+`;
