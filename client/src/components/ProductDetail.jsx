@@ -45,7 +45,7 @@ function ProductDetail({ productId }) {
 
     const addToCartHandler = async () => {
         try {
-            if(quantity <= 1 || quantity > product.stock)
+            if(quantity < 1 || quantity > product.stock)
                 return;
 
             await addItemToCart({

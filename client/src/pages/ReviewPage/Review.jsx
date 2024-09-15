@@ -14,8 +14,8 @@ function Review() {
 
     return (
         <div className="page cart-container">
-            {data.getCart.items.length === 0 ?
-                <h2>No items in cart</h2>
+            {data.getCart.items.length === 0
+                ? <h2>No items in cart</h2>
                 : data.getCart.items.map(item => {
                     return (
                         <CartItem
