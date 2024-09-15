@@ -108,3 +108,12 @@ export const SYNC_CART = gql`
     }
   }
 `
+
+export const REMOVE_CART = gql`
+  mutation removeCart($cartId: ID!) {
+    removeCart(cartId: $cartId) {
+      success
+      message
+    }
+  }
+`;
