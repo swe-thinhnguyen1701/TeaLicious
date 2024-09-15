@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import sampleLogo from "../assets/sample-logo.jpg";
+import TLlogo from "../assets/images/TL-logo.png";
 import UserStatus from "./UserStatus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons"
@@ -33,7 +33,7 @@ function Navbar() {
             <nav>
                 <div className="nav-left">
                     <Link to="/products">
-                        <img src={sampleLogo} className="logo" alt="TeaLicious logo" />
+                        <img src={TLlogo} className="logo" alt="TeaLicious logo" />
                     </Link>
                 </div>
                 <div className="nav-right">
