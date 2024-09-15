@@ -230,16 +230,23 @@ const resolvers = {
             try {
                 if (context.user) {
                     await User.findByIdAndUpdate(context.user._id, { cart: null });
-                } else {
-                    await Cart.findByIdAndDelete(cartId);
                 }
+
+                const cart = await Cart.findById(cartId);
+                // update product stock
+                for (const item of cart.items) {
+                    const product = await Product.findById(item.productId);
+                    product.stock -= item.quantity;
+                    await product.save();
+                }
+                await cart.deleteOne();
 
                 return { success: true, message: "Cart is removed" };
             } catch (error) {
                 console.error("ERROR occurs while removing CART");
                 throw new Error("Failed to remove cart");
             }
-        }
+        },
     }
 }
 
