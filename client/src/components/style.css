@@ -27,6 +27,7 @@ nav {
     height: 50px;
     border-radius: 50%;
     transition: transform 0.5s;
+    margin-left: 20px;
 }
 
 .logo:hover {
@@ -463,6 +464,14 @@ footer {
     font-weight: bolder;
     z-index: 5;
 }
+
+
+#profile-link{
+    color: white;
+}
+
+#bullet-points{
+    list-style: none;
 
 /* CART ITEM */
 .cart-item-container{

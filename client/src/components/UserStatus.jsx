@@ -5,9 +5,9 @@ import Auth from "../utils/auth";
 function UserStatus({ isLoggedIn }) {
     if (isLoggedIn) {
         return (
-            <ul className="list list-inline">
+            <ul className="list list-inline" id = "bullet-points">
                 <li className="list-item">
-                    <Link to="/my-profile">My Profile</Link>
+                    <Link to="/my-profile" id="profile-link">My Profile</Link>
                 </li>
                 <li className="list-item">
                     <button className="btn" onClick={Auth.logout}>Logout</button>
