@@ -10,7 +10,7 @@ function UserStatus({ isLoggedIn }) {
                     <Link to="/my-profile" id="profile-link">My Profile</Link>
                 </li>
                 <li className="list-item">
-                    <button className="btn" onClick={Auth.logout}>Logout</button>
+                    <button className="logout-btn" onClick={Auth.logout}>Logout</button>
                 </li>
             </ul>
         );
