@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
-import { GET_ME } from "../../utils/queries";
 import Auth from "../../utils/auth"
 import "./style.css";
 
 function Signup() {
     const [userFormData, setUserFormData] = useState({ username: "", email: "", password: "" });
 
-    const [addUser, { error }] = useMutation(ADD_USER, {
-        refetchQueries: [GET_ME]
-    });
+    const [addUser, { error }] = useMutation(ADD_USER);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
