@@ -26,7 +26,7 @@ function Navbar() {
     useEffect(() => {
         if (data && data.getCart)
             setTotalItem(data.getCart.items.length);
-    }, [data]);
+    }, [data, loading]);
 
     return (
         <header className="mb-20">
