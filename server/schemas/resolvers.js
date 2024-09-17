@@ -69,11 +69,10 @@ const resolvers = {
             return { session: session.id }
         }
     },
-    Mutation: {
 
+    Mutation: {
         addUser: async (_parent, { username, email, password }) => {
-            const newCart = await Cart.create({})
-            const user = await User.create({ username, email, password, cart: newCart._id });
+            const user = await User.create({ username, email, password });
             const token = signToken(user);
 
             return { token, user };
