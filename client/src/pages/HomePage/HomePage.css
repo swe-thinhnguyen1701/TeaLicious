@@ -14,11 +14,23 @@
   }
 }
 
+.home-page-image {
+  background-image: url('../../assets/images/home-image.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
 /* CSS for title */
 .home-page-title {
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: 90px;
+  background-image: url("../../assets/images/sampleBG.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* CSS for statement */
@@ -28,6 +40,7 @@
   transform: scale(0.94);
   width: 100%;
   margin-bottom: 30px;
+  margin-left: 90px;
   padding-top: 0;
   display: flex;
   justify-content: center;
@@ -119,8 +132,7 @@ span:nth-child(8) {
   width: 15%;
   background-color: var(--green);
   float: left;
-  margin-left: 75%;
-
+  margin-left: 90%;
 }
 
 .home-page {

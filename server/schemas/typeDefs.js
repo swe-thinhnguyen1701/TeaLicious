@@ -42,6 +42,10 @@ const typeDefs = `
     _id: ID!
     name: String!
   }
+
+  type Checkout {
+    session: ID
+  }
   
   type Query {
     me: User
@@ -49,6 +53,7 @@ const typeDefs = `
     getProducts(categoryId: ID!): [Product]
     getProduct(_id: ID!): Product
     getCategories: [Category]
+    getCheckout(cartId: ID!): Checkout
   }
 
   type Mutation {
@@ -60,11 +65,17 @@ const typeDefs = `
     addItemToCart(_id: ID!, productId: ID!, quantity: Int): Cart
     removeItemFromCart(_id: ID!, productId: ID!): Cart
     updateCartItem(_id: ID!, productId: ID!, quantity: Int!): Cart
+    removeCart(cartId: ID!): RemoveCartResponse
   }
 
   type Auth {
     token: ID!
     user: User
+  }
+
+  type RemoveCartResponse {
+    success: Boolean!
+    message: String
   }
 `
 module.exports = typeDefs;

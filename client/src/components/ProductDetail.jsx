@@ -45,8 +45,10 @@ function ProductDetail({ productId }) {
 
     const addToCartHandler = async () => {
         try {
-            if(quantity <= 1 || quantity > product.stock)
+            if(quantity < 1 || quantity > product.stock) {
+                alert("Invalid quantity. Must be greater than 0 or less than stock")
                 return;
+            }
 
             await addItemToCart({
                 variables: {
@@ -75,9 +77,9 @@ function ProductDetail({ productId }) {
                 <div className="product-info">
                     <h2 className="product-name">{product.name}</h2>
                     <p className="product-description">{product.description}</p>
-                    <p className="product-stock">{product.stock}</p>
-                    <p className="product-weight">{product.weight}</p>
-                    <p className="product-price">${product.price}</p>
+                    <p className="product-stock">Stock: {product.stock}</p>
+                    <p className="product-weight">Weight: {product.weight} oz</p>
+                    <p className="product-price">Price: ${product.price}</p>
                 </div>
                 <div className="product-action">
                     <div className="product-quantity">

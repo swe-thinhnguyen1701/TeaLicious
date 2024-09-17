@@ -29,13 +29,14 @@ db.once("open", async () => {
 
         for (let product of TEA_DATA) {
             const key = `${product.name.replace(/ /g, "-")}.webp`;
-            const command = new GetObjectCommand(
-                {
-                    Bucket: process.env.AWS_BUCKET_NAME,
-                    Key: key
-                }
-            );
-            const imgUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
+            const imgUrl = `https://d2vjaadplvjxj2.cloudfront.net/${key}`;
+            // const command = new GetObjectCommand(
+            //     {
+            //         Bucket: process.env.AWS_BUCKET_NAME,
+            //         Key: key
+            //     }
+            // );
+            // const imgUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
             const categoryId = categoryMap.get(product.category);
 
             product.image = imgUrl;

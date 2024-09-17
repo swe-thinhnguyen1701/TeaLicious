@@ -1,0 +1,8 @@
+.item-page {
+    max-width: 1600px;
+    min-height: 87.8vh;
+}
+
+@media screen and (max-width: 768px) {
+
+}

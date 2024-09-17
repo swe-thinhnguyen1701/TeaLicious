@@ -29,7 +29,7 @@ function ProductsPage() {
 
     return (
         <CategoryProvider>
-            <section className="page">
+            <section className="page product-page">
                 <CategoryList />
                 <ProductList />
             </section>
