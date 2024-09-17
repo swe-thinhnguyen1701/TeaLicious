@@ -9,24 +9,36 @@ import "./style.css"
 // Anna has the auth form
 
 import { useQuery } from "@apollo/client"
-import { GET_CART } from "../utils/queries";
+// import { GET_CART } from "../utils/queries";
+import { GET_ME } from "../utils/queries";
 
 import Auth from "../utils/auth";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 function Navbar() {
 
-    const cartId = localStorage.getItem("cart_id");
-    const { loading, error, data } = useQuery(GET_CART, {
-        variables: { _id: cartId }
-    });
-    console.log("FROM NAV :>>", data);
+    // const cartId = localStorage.getItem("cart_id");
+    // const { loading, error, data } = useQuery(GET_CART, {
+    //     variables: { _id: cartId }
+    // });
+    const { loading, error, data } = useQuery(GET_ME);
+    // console.log("FROM NAV :>>", data);
 
-    const [totalItem, setTotalItem] = useState(0);
-    useEffect(() => {
-        if (data && data.getCart)
-            setTotalItem(data.getCart.items.length);
-    }, [data]);
+    const totalItem = data?.me.cart.items.reduce((a, b) => {
+        return a + b.quantity
+    }, 0) || 0;
+
+    // const [totalItem, setTotalItem] = useState(0);
+    // useEffect(() => {
+    //     if (data && data.getCart)
+    //         setTotalItem(data.getCart.items.length);
+    // }, [data]);
+
+    if(loading) {
+        return (
+            <h1>LOADING.....</h1>
+        )
+    }
 
     return (
         <header className="mb-20">
