@@ -72,7 +72,10 @@ const resolvers = {
 
     Mutation: {
         addUser: async (_parent, { username, email, password }) => {
+            const cart = await Cart.create({items:[]})
             const user = await User.create({ username, email, password });
+            user.cart = cart._id;
+            await user.save();
             const token = signToken(user);
 
             return { token, user };
@@ -101,7 +104,9 @@ const resolvers = {
         },
         newCart: async (_parent, _args) => {
             try {
-                const cart = await Cart.create({});
+                const cart = await Cart.create({
+                    items: []
+                });
                 return cart;
             } catch (error) {
                 console.error("ERROR occurs while creating CART");
