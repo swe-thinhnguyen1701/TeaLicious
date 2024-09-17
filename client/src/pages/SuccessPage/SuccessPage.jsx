@@ -13,7 +13,7 @@ function Success() {
         async function cleanUp() {
             const cartId = localStorage.getItem("cart_id");
             if (cartId) {
-                await removeCart({ variables: { _id: cartId } });
+                await removeCart({ variables: { cartId: cartId } });
                 localStorage.removeItem("cart_id");
             }
 
