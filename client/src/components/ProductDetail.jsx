@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_ME, GET_PRODUCT } from "../utils/queries";
 import { ADD_ITEM_TO_CART } from "../utils/mutations";
+import {CategoryContext} from "../utils/CategoryContext";
 import "./style.css";
 
 function ProductDetail({ productId }) {
+    const {setShouldUpdateCart} = useContext(CategoryContext)
     const { loading, error, data } = useQuery(GET_PRODUCT, {
         variables: { _id: productId }
     });
@@ -57,6 +59,7 @@ function ProductDetail({ productId }) {
                     quantity: quantity
                 }
             });
+            setShouldUpdateCart(true)
             confirm(`${product.name} has been added to your cart`);
         } catch (error) {
             console.error("ERROR occurs while adding ITEM to CART", error);

@@ -1,0 +1,9 @@
+.checkout-btn{
+    border: 0;
+    border-radius: 20px;
+    width: 200px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--green);
+    color: white 
+}

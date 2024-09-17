@@ -5,6 +5,7 @@ import { useLazyQuery } from "@apollo/client";
 import { CHECKOUT } from "../../utils/queries";
 import CartItem from "../../components/CartItem";
 import { useEffect } from "react";
+import "./Review.css";
 
 const stripePromise = loadStripe("pk_test_51Pz97qRqmT90kMSgW4BiW1HnpYXHNTuPSFFhlL5USqio3gGQoIJvbzMpAIGRbJK9hrnupgtKHnyeekRuFyAFwnlp00Nj5b9Nal");
 
@@ -53,7 +54,7 @@ function Review() {
                 )
             })
             }
-            <button onClick={submitCheckout}>Checkout</button>
+            <button className= "checkout-btn" onClick={submitCheckout}>Checkout</button>
         </div>
     )
 }
