@@ -4,10 +4,12 @@ import { useParams } from "react-router-dom";
 import './ItemPage.css';
 
 function ItemPage() {
-    const { id:productId } = useParams();
+    const { id: productId } = useParams();
     return (
-        <div className="item-page">
-            <ProductDetail productId={productId} />
+        <div className="item-page-image">
+            <div className="item-page">
+                <ProductDetail productId={productId} />
+            </div>
         </div>
     )
 }

@@ -7,10 +7,11 @@
   min-height: 82vh;
   margin-bottom: 0;
   text-align: left;
+  margin-left: 180px;
 }
 
 .user-page-image {
-  background-image: url('../../assets/images/profile-image.jpeg');
+  background-image: url('../../assets/images/profie-image2.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,6 +21,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+ 
 }
 
 .profile {
