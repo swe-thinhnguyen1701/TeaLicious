@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import './index.css';
+import { CategoryProvider } from './utils/CategoryContext';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -30,7 +31,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Navbar />
+      <CategoryProvider>
+        <Navbar />
+      </CategoryProvider>
       <Outlet />
       <Footer />
     </ApolloProvider>

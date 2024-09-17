@@ -12,10 +12,11 @@ import { useQuery } from "@apollo/client"
 import { GET_CART } from "../utils/queries";
 
 import Auth from "../utils/auth";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { CategoryContext } from "../utils/CategoryContext";
 
 function Navbar() {
-
+    const { shouldUpdateCart, setShouldUpdateCart } = useContext(CategoryContext);
     const cartId = localStorage.getItem("cart_id");
     const { loading, error, data } = useQuery(GET_CART, {
         variables: { _id: cartId }
@@ -23,10 +24,14 @@ function Navbar() {
     console.log("FROM NAV :>>", data);
 
     const [totalItem, setTotalItem] = useState(0);
+
     useEffect(() => {
-        if (data && data.getCart)
+        if (data && data.getCart) {
             setTotalItem(data.getCart.items.length);
-    }, [data, loading]);
+            setShouldUpdateCart(false);
+        }
+    }, [data, loading, shouldUpdateCart]);
+
 
     return (
         <header className="mb-20">

@@ -2,15 +2,18 @@
 import ProductDetail from "../../components/ProductDetail";
 import { useParams } from "react-router-dom";
 import './ItemPage.css';
+import { CategoryProvider } from "../../utils/CategoryContext";
 
 function ItemPage() {
     const { id: productId } = useParams();
     return (
-        <div className="item-page-image">
-            <div className="item-page">
+      <div className="item-page-image">
+        <div className="item-page">
+            <CategoryProvider>
                 <ProductDetail productId={productId} />
-            </div>
+            </CategoryProvider>
         </div>
+      </div>
     )
 }
 
