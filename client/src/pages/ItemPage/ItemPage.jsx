@@ -5,13 +5,15 @@ import './ItemPage.css';
 import { CategoryProvider } from "../../utils/CategoryContext";
 
 function ItemPage() {
-    const { id:productId } = useParams();
+    const { id: productId } = useParams();
     return (
+      <div className="item-page-image">
         <div className="item-page">
             <CategoryProvider>
                 <ProductDetail productId={productId} />
             </CategoryProvider>
         </div>
+      </div>
     )
 }
 

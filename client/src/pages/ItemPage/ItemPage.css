@@ -3,6 +3,14 @@
     min-height: 87.8vh;
 }
 
+.item-page-image {
+    background-image: url('../../assets/images/item-image.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
 @media screen and (max-width: 768px) {
 
 }
