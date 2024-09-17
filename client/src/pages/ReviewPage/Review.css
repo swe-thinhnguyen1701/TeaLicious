@@ -1,0 +1,32 @@
+.cart-page-image {
+    background-image: url('../../assets/images/cart-image.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.cart-item-img {
+    width: 300px;
+    margin-top: 30px;
+    margin-left: 0px;
+}
+
+.cart-item-container {
+    margin-left: 50px;
+}
+.cart-item-price{
+font-size: 1.2rem;
+}
+
+.cart-item-subtotal {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.review-btn {
+    margin-top: 20px;
+    background-color: var(--white);
+    margin-left: 50px;
+}

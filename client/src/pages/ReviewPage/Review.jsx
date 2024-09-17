@@ -5,6 +5,7 @@ import { useLazyQuery } from "@apollo/client";
 import { CHECKOUT } from "../../utils/queries";
 import CartItem from "../../components/CartItem";
 import { useEffect } from "react";
+import "./Review.css";
 
 const stripePromise = loadStripe("pk_test_51Pz97qRqmT90kMSgW4BiW1HnpYXHNTuPSFFhlL5USqio3gGQoIJvbzMpAIGRbJK9hrnupgtKHnyeekRuFyAFwnlp00Nj5b9Nal");
 
@@ -42,18 +43,20 @@ function Review() {
     }
 
     return (
-        <div className="page cart-container">
-            {data.getCart.items.map(item => {
-                return (
-                    <CartItem
-                        key={item.productId}
-                        productId={item.productId}
-                        quantity={item.quantity}
-                    />
-                )
-            })
-            }
-            <button onClick={submitCheckout}>Checkout</button>
+        <div className="cart-page-image">
+            <div className="page cart-container">
+                {data.getCart.items.map(item => {
+                    return (
+                        <CartItem
+                            key={item.productId}
+                            productId={item.productId}
+                            quantity={item.quantity}
+                        />
+                    )
+                })
+                }
+                <button className="review-btn" onClick={submitCheckout}>Checkout</button>
+            </div>
         </div>
     )
 }

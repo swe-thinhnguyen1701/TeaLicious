@@ -25,7 +25,7 @@
 /* CSS for title */
 .home-page-title {
   text-align: center;
-  margin-top: 0;
+  margin-top: 90px;
   margin-bottom: 0;
   margin-left: 90px;
   background-image: url("../../assets/images/sampleBG.jpeg");
@@ -132,7 +132,7 @@ span:nth-child(8) {
   width: 15%;
   background-color: var(--green);
   float: left;
-  margin-left: 90%;
+  margin-left: 90px;
 }
 
 .home-page {
