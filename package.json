@@ -11,8 +11,8 @@
     "build": "cd client && npm run build",
     "seed": "cd server && npm run seed"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Ecommerce", "E-commerce"],
+  "author": "Dream Team",
   "license": "ISC",
   "dependencies": {
     "concurrently": "^8.2.2"
