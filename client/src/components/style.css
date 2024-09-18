@@ -134,6 +134,7 @@ nav {
     margin-bottom: 15px;
 
 }
+
 .product-description {
     height: 100px;
 }
@@ -264,6 +265,7 @@ footer {
 
 .category.category-selected {
     background-color: #a07321;
+
     .btn {
         color: var();
     }
@@ -439,56 +441,83 @@ footer {
 
 #bullet-points {
     list-style: none;
+}
 
-    /* CART ITEM */
-    .cart-item-container {
-        display: flex;
+/* CART ITEM */
+.cart-item-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: hidden;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.cart-item-action input {
+    width: 50px;
+}
+
+.cart-item-action input::-webkit-outer-spin-button,
+.cart-item-action input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.cart-item-img-container {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-img {
+    width: 100%;
+}
+
+.cart-item-name {
+    font-size: 2rem;
+
+}
+
+.cart-item-price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.cart-item-remove {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.cart-item-subtotal {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cart-item-info {
+    width: 190px;
+}
+
+.remove-item-icon {
+    font-size: 2.2rem;
+}
+
+@media screen and (min-width: 768px){
+   .cart-item-container{
+    padding-left: 40px;
+   }
+}
+
+@media screen and (min-width: 1024px){
+    .cart-item-container{
+        padding: 0;
+        flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
+        width: 63.47vw;
     }
 
-    .cart-item-action input {
-        width: 50px;
-    }
-
-    .cart-item-action input::-webkit-outer-spin-button,
-    .cart-item-action input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-    }
-
-    .cart-item-img-container {
-        width: 200px;
-        height: 200px;
-        display: flex;
-        align-items: center;
-    }
-
-    .cart-item-img {
-        width: 100%;
-    }
-
-    .cart-item-name {
-        font-size: 2rem;
-
-    }
-
-    .cart-item-price {
-        font-size: 2rem;
-        font-weight: bold;
-    }
-
-    .cart-item-remove {
-        cursor: pointer;
-        font-size: 2rem;
-    }
-
-    .cart-item-subtotal {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .cart-item-info {
-        width: 190px;
+    .cart-item-img-container{
+        width: 100px;
     }
 }
