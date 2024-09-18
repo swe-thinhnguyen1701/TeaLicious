@@ -110,7 +110,7 @@ function CartItem({ productId, quantity }) {
                 <span>Total amount: ${product.price * quantity}</span>
             </div>
             <div className="cart-item-remove" onClick={removeItemHandler}>
-                <FontAwesomeIcon icon={faTrash} className="icon" />
+                <FontAwesomeIcon icon={faTrash} className="remove-item-icon" />
             </div>
         </div>
     );

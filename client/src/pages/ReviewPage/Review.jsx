@@ -32,8 +32,10 @@ function Review() {
     if (loading) return <h2>Loading...</h2>
     if (!data || !data.getCart || !data.getCart.items || data.getCart.items.length === 0) {
         return (
-            <div className="page">
-                <h2>No items in your cart</h2>
+            <div className="cart-page-image">
+                <div className="page">
+                    <h2>No items in your cart</h2>
+                </div>
             </div>
         )
     }
@@ -44,7 +46,7 @@ function Review() {
 
     return (
         <div className="cart-page-image">
-            <div className="page cart-container">
+            <div className="cart-container">
                 {data.getCart.items.map(item => {
                     return (
                         <CartItem
