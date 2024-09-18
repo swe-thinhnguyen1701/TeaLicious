@@ -21,8 +21,9 @@ Explore our variety of teas, from classic blends to exotic flavors, all in a bea
 [Installation](#installation)</br>
 [Usage](#usage)</br>
 [GraphQL API](#graphql-api)</br>
-[Project Structure](#project-structure)</br>
-[Contributing](#contributing)</br>
+[Screen Shots](#screenshots)</br>
+[Contribution](#contribution)</br>
+[Contact](#contact)
 
 ## Technologies
 
@@ -48,22 +49,20 @@ Prerequisites:
 * npm for package management
 * MongoDB (local installation or a cloud instance)
 
+
 ```
 git clone git@github.com:swe-thinhnguyen1701/TeaLicious.git
-
 ```
 ```
 cd TeaLicious
-
 ```
 ```
 npm install
-
 ```
 ```
 npm run develop
-
 ```
+
 ## Usage
 Once both the front-end and back-end servers are running, you can access the application by navigating to http://localhost:3000 in your browser.
 
@@ -112,6 +111,22 @@ Add a new tea: mutation {
     stock
   }
 }
+
+
+## Screenshots
+![screen shot](./client/src/assets/images/HomePage.png)
+![screen shot](./client/src/assets/images/Login-SignupPage.png)
+![screen shot](./client/src/assets/images/ProductsPage.png)
+
+## Contribution
+Feel free to contribute to this project by opening issues, submitting pull requests, or suggesting features. Please ensure your contributions adhere to the project's code style and include appropriate tests. 
+
+## Contact
+Thank you for visiting!
+
+If you would like to learn more, feel free to contact us.</br>
+
+GitHub URL: https://github.com/swe-thinhnguyen1701
 
 ## Project Structure
 * Frontend
