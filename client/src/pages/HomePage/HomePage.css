@@ -25,9 +25,7 @@
 /* CSS for title */
 .home-page-title {
   text-align: center;
-  margin-top: 90px;
-  margin-bottom: 0;
-  margin-left: 90px;
+
   background-image: url("../../assets/images/sampleBG.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -40,12 +38,13 @@
   transform: scale(0.94);
   width: 100%;
   margin-bottom: 30px;
-  margin-left: 90px;
   padding-top: 0;
   display: flex;
   justify-content: center;
-  color:var(--green);
+  color: var(--green);
   font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .statement span {
@@ -83,7 +82,7 @@
   animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
-span:nth-child(8) {
+.statement span:nth-child(8) {
   animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
@@ -115,14 +114,16 @@ span:nth-child(8) {
   animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
-@media screen and (min-width: 768px){
-  .statement{
+@media screen and (min-width: 768px) {
+  .statement {
     font-size: 1.5rem;
+    margin-bottom: 30px;
+    margin-left: 90px;
   }
 }
 
-@media screen and (min-width: 1300px){
-  .statement{
+@media screen and (min-width: 1300px) {
+  .statement {
     font-size: 1.9rem;
   }
 }
@@ -154,7 +155,7 @@ span:nth-child(8) {
   margin-bottom: 40px;
 }
 
-.home-page-img-container{
+.home-page-img-container {
   border-radius: 30px;
   overflow: hidden;
   max-width: 1000px;
@@ -162,7 +163,7 @@ span:nth-child(8) {
   box-shadow: 1px 1px 30px #9e7120;
 }
 
-.home-page-img{
+.home-page-img {
   width: 100%;
 }
 
@@ -191,6 +192,9 @@ span:nth-child(8) {
   }
 
   .home-page-title {
+    margin-top: 90px;
+    margin-bottom: 0;
+    margin-left: 90px;
     font-size: 6rem;
   }
 
@@ -227,7 +231,7 @@ span:nth-child(8) {
 }
 
 .home-page-title {
-  font-size: 5rem;
+  font-size: 3rem;
   margin-bottom: 20px;
   color: #9e7120;
 }

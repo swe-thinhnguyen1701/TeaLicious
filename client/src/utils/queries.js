@@ -23,7 +23,7 @@ export const GET_ME = gql`
 `;
 
 export const GET_CART = gql`
-  query getCart($_id: ID!) {
+  query getCart($_id: ID) {
     getCart(_id: $_id) {
       _id
       items {

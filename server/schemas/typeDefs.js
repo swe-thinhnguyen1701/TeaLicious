@@ -119,7 +119,7 @@ const typeDefs = `
   
   type Query {
     me: User
-    getCart(_id: ID!): Cart
+    getCart(_id: ID): Cart
     getProducts(categoryId: ID!): [Product]
     getProduct(_id: ID!): Product
     getCategories: [Category]

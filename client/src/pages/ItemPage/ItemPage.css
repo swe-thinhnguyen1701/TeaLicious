@@ -1,6 +1,8 @@
 .item-page {
     max-width: 1600px;
     min-height: 87.8vh;
+    display: flex;
+    align-items: center;
 }
 
 .item-page-image {
@@ -8,7 +10,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 @media screen and (max-width: 768px) {
