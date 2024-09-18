@@ -1,0 +1,5 @@
+* Thinh Nguyen (Charles): [GitHub](https://github.com/swe-thinhnguyen1701)
+* Faiza Haque: [GitHub](https://github.com/Faiza-Haque)
+* Marissa Melo: [GitHub](https://github.com/marissamelo91)
+* Ritu Gupta: [GitHub](https://github.com/goodritu1)
+* Anna Krentz: [GitHub](https://github.com/explorer7733)
