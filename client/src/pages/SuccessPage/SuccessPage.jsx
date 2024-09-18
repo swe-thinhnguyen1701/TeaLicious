@@ -12,9 +12,11 @@ function Success() {
     useEffect(() => {
         async function cleanUp() {
             const cartId = localStorage.getItem("cart_id");
+            
             if (cartId) {
-                await removeCart({ variables: { cartId: cartId } });
+                const res = await removeCart({ variables: { cartId } });
                 localStorage.removeItem("cart_id");
+                console.log(res);
             }
 
             setTimeout(() => {

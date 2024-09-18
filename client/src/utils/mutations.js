@@ -114,6 +114,7 @@ export const REMOVE_CART = gql`
     removeCart(cartId: $cartId) {
       success
       message
+      cartId
     }
   }
 `;
