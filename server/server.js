@@ -3,6 +3,7 @@ const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 const { authMiddleware } = require("./utils/auth");
 const { resolvers, typeDefs } = require("./schemas");
+// cors package is optional. The reason I add because I have a problem with backend url. For some reasons, it always complains me that the link is not found and return 404 error code.
 const cors = require("cors");
 const path = require("path");
 const db = require("./config/db-connection");
