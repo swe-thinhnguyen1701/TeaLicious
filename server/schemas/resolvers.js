@@ -8,7 +8,6 @@ const resolvers = {
         me: async (_parent, _agrs, context) => {
             if (context.user) {
                 const user = await User.findOne({ _id: context.user._id }).populate("cart");
-                console.log("BACKEND USER :>>", user);
                 return user;
             }
             throw AuthenticationError;
@@ -72,10 +71,7 @@ const resolvers = {
 
     Mutation: {
         addUser: async (_parent, { username, email, password }) => {
-            const cart = await Cart.create({items:[]})
             const user = await User.create({ username, email, password });
-            user.cart = cart._id;
-            await user.save();
             const token = signToken(user);
 
             return { token, user };
@@ -104,9 +100,7 @@ const resolvers = {
         },
         newCart: async (_parent, _args) => {
             try {
-                const cart = await Cart.create({
-                    items: []
-                });
+                const cart = await Cart.create({});
                 return cart;
             } catch (error) {
                 console.error("ERROR occurs while creating CART");
@@ -116,7 +110,6 @@ const resolvers = {
         addItemToCart: async (_parent, { _id, productId, quantity }) => {
             try {
                 const product = await Product.findById(productId);
-                console.log(product.stock);
 
                 if (quantity <= 0 || quantity > product.stock) {
                     throw new Error(`Invalid quantity. Quantity must be greater than 0 and not exceed available stock (${product.stock})`);
@@ -160,8 +153,8 @@ const resolvers = {
 
 
             } catch (error) {
-                console.log(error)
                 console.error("ERROR occurs while adding ITEM to CART");
+                console.log(error);
                 throw new Error("Failed to add item to cart");
             }
         },
@@ -184,12 +177,8 @@ const resolvers = {
                     { _id: _id }
                 );
 
-                console.log(cart)
-
                 const updatedItems = cart.items.map(item => {
-                    console.log(item.productId + " vs " + productId)
                     if (item.productId == productId) {
-                        console.log("is equals")
                         return {
                             productId: item.productId,
                             quantity: quantity
@@ -197,9 +186,7 @@ const resolvers = {
                     } else {
                         return item;
                     }
-                })
-
-                console.log(updatedItems)
+                });
 
                 const updatedCart = await Cart.findOneAndUpdate(
                     { _id: _id },
@@ -220,10 +207,31 @@ const resolvers = {
 
             try {
                 const user = await User.findById(context.user._id);
+                const userCart = await Cart.findById(user.cart);
+                const cart = await Cart.findById(cartId);
 
-                if (!user.cart) {
-                    await user.updateOne({ cart: cartId }, { new: true });
+                if(userCart.items.length === 0){
+                    user.cart = cart._id;
+                    await user.save();
+                    return user;
                 }
+
+                const map = new Map();
+                for(const item of userCart.items){
+                    map.set(item.productId, item.quantity);
+                }
+
+                for(const item of cart.items){
+                    if(!map.has(item.productId)){
+                        map.set(item.productId, item.quantity);
+                    }
+                }
+                const updatedItems = Array.from(map).map(([productId, quantity]) => ({ productId, quantity }));
+                cart.items = updatedItems;
+                await cart.save();
+
+                await Cart.findByIdAndDelete(cartId);
+
                 const updateUser = await User.findById(context.user._id);
                 return updateUser;
             } catch (error) {
@@ -233,8 +241,10 @@ const resolvers = {
         },
         removeCart: async (_parent, { cartId }, context) => {
             try {
+                const newCart = await Cart.create();
+                const newCartId = newCart._id;
                 if (context.user) {
-                    await User.findByIdAndUpdate(context.user._id, { cart: null });
+                    await User.findByIdAndUpdate(context.user._id, { cart: newCartId });
                 }
 
                 const cart = await Cart.findById(cartId);
@@ -246,7 +256,7 @@ const resolvers = {
                 }
                 await cart.deleteOne();
 
-                return { success: true, message: "Cart is removed" };
+                return { success: true, message: "Cart is removed", newCartId: newCartId };
             } catch (error) {
                 console.error("ERROR occurs while removing CART");
                 throw new Error("Failed to remove cart");

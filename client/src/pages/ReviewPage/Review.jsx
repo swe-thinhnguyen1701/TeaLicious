@@ -43,18 +43,20 @@ function Review() {
     }
 
     return (
-        <div className="page cart-container">
-            {data.getCart.items.map(item => {
-                return (
-                    <CartItem
-                        key={item.productId}
-                        productId={item.productId}
-                        quantity={item.quantity}
-                    />
-                )
-            })
-            }
-            <button className= "checkout-btn" onClick={submitCheckout}>Checkout</button>
+        <div className="cart-page-image">
+            <div className="page cart-container">
+                {data.getCart.items.map(item => {
+                    return (
+                        <CartItem
+                            key={item.productId}
+                            productId={item.productId}
+                            quantity={item.quantity}
+                        />
+                    )
+                })
+                }
+                <button className="review-btn" onClick={submitCheckout}>Checkout</button>
+            </div>
         </div>
     )
 }
