@@ -71,6 +71,7 @@ const resolvers = {
          * @returns {Promise<Cart>} The cart with the specified ID.
          */
         getCart: async (_parent, { _id }) => {
+            if(_id === null) return;
             return Cart.findById(_id);
         },
 

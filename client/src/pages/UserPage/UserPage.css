@@ -7,7 +7,12 @@
   min-height: 82vh;
   margin-bottom: 0;
   text-align: left;
-  margin-left: 180px;
+}
+
+@media screen and (min-width: 768px) {
+  .user-page {
+    margin-left: 180px;
+  }
 }
 
 .user-page-image {
@@ -21,7 +26,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
- 
+
 }
 
 .profile {
@@ -32,7 +37,7 @@
 .input-field {
   display: flex;
   flex-direction: column;
-  background-color: var(--white);
+  /* background-color: var(--white); */
 }
 
 label {

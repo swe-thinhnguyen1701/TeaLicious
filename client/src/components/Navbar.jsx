@@ -18,10 +18,9 @@ import { CategoryContext } from "../utils/CategoryContext";
 function Navbar() {
     const { shouldUpdateCart, setShouldUpdateCart } = useContext(CategoryContext);
     const cartId = localStorage.getItem("cart_id");
-    const { loading, error, data } = useQuery(GET_CART, {
+    const { loading, data } = useQuery(GET_CART, {
         variables: { _id: cartId }
     });
-    console.log("FROM NAV :>>", data);
 
     const [totalItem, setTotalItem] = useState(0);
 
