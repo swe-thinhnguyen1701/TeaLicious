@@ -8,8 +8,9 @@ Welcome to our Tea eCommerce Shop! This application allows users to browse and p
 [Installation](#installation)</br>
 [Usage](#usage)</br>
 [GraphQL API](#graphql-api)</br>
-[Project Structure](#project-structure)</br>
-[Contributing](#contributing)</br>
+[Screen Shots](#screenshots)</br>
+[Contribution](#contribution)</br>
+[Contact](#contact)
 
 ## Technologies
 This project utilizes the following technologies:
@@ -25,6 +26,20 @@ Prerequisites:
 * Node.js (v14 or later)
 * npm for package management
 * MongoDB (local installation or a cloud instance)
+
+### Clone the Repository
+1. git clone https://github.com/swe-thinhnguyen1701/TeaLicious
+2. Backend Setup </br>
+cd server </br>
+install dependencies - npm install </br>
+npm run seed </br>
+npm run develop </br>
+3. Frontend Setup </br>
+cd client </br>
+install dependencies - npm install </br>
+npm run seed </br>
+npm run develop </br>
+
 
 ## Usage
 Once both the frontend and backend servers are running, you can access the application by navigating to http://localhost:3000 in your browser.
@@ -75,24 +90,17 @@ Add a new tea: mutation {
   }
 }
 
-## Project Structure
-* Frontend
-client/
-public/
-components/ - React components
-graphql/ - GraphQL queries and mutations
-App.js - Main React component
-index.js - Entry point for the frontend app
-package.json - Frontend dependencies and scripts
-Backend: 
-backend/
-src/
-models/ - Mongoose models for MongoDB collections
-resolvers/ - GraphQL resolvers
-schemas/ - GraphQL schemas
-index.js - Entry point for the backend server
-.env - Environment variables
-package.json - Backend dependencies and scripts
+## Screenshots
+![screen shot](./client/src/assets/images/HomePage.png)
+![screen shot](./client/src/assets/images/Login-SignupPage.png)
+![screen shot](./client/src/assets/images/ProductsPage.png)
 
-## Contributing
-Feel free to contribute to this project by opening issues, submitting pull requests, or suggesting features. Please ensure your contributions adhere to the project's code style and include appropriate tests.
+## Contribution
+Feel free to contribute to this project by opening issues, submitting pull requests, or suggesting features. Please ensure your contributions adhere to the project's code style and include appropriate tests. 
+
+## Contact
+Thank you for visiting!
+
+If you would like to learn more, feel free to contact us.</br>
+
+GitHub URL: https://github.com/swe-thinhnguyen1701
