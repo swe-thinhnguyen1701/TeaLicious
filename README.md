@@ -6,7 +6,7 @@ Welcome to our "TeaLicious" eCommerce Shop!
 Our application offers users the ability to browse and purchase a wide variety of teas with ease. Whether you're a casual guest or a registered member, you'll enjoy a seamless and interactive shopping experience powered by modern web technologies.
 
 Explore our variety of teas, from classic blends to exotic flavors, all in a beautifully designed interface.
-You can visit our project on the link: tealicious.onrender.com/
+You can visit our project on the link: [tealicious.onrender.com/](https://tealicious.onrender.com/)
 
 ### Key Features
 
